@@ -1,0 +1,79 @@
+\contentsline {chapter}{\numberline {1}Prerequisites}{5}{chapter.1}
+\contentsline {chapter}{\numberline {2}What We Are Doing in This Course?}{7}{chapter.2}
+\contentsline {section}{\numberline {2.1}우리가 사용하는 자료}{9}{section.2.1}
+\contentsline {section}{\numberline {2.2}추론(Inference)과 변수(variables), 그리고 측정 수준(척도)}{10}{section.2.2}
+\contentsline {section}{\numberline {2.3}선형회귀모델 간단히 다시보기}{11}{section.2.3}
+\contentsline {chapter}{\numberline {3}Basics for Advanced Linear Regression Models: Part I}{19}{chapter.3}
+\contentsline {section}{\numberline {3.1}\(\mitbeta _1\)에 대하여}{20}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}\(E(u|x)\)의 의미}{20}{subsection.3.1.1}
+\contentsline {section}{\numberline {3.2}모집단 회귀 함수(Population Regression Function; PRF)}{21}{section.3.2}
+\contentsline {section}{\numberline {3.3}추정-조건들들로부터 도출}{21}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}가정1.과 제약1.}{22}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}가정2.와 제약2.}{22}{subsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.2.1}제1단계}{22}{subsubsection.3.3.2.1}
+\contentsline {subsubsection}{\numberline {3.3.2.2}제2단계}{23}{subsubsection.3.3.2.2}
+\contentsline {subsection}{\numberline {3.3.3}언제 \(\mitbeta _1\)의 값이 커질까?}{23}{subsection.3.3.3}
+\contentsline {section}{\numberline {3.4}추정-잔차의 최소화}{23}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}표본 회귀 함수 (Sample regression function, SRF)}{23}{subsection.3.4.1}
+\contentsline {section}{\numberline {3.5}모집단 회귀 함수와 표본 회귀 함수의 이해}{24}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}일종의 ``총합들'' (sums)}{25}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}\textbf {R}로 계산해보기}{26}{subsection.3.5.2}
+\contentsline {chapter}{\numberline {4}Basics for Advanced Linear Regression Models: Part II}{29}{chapter.4}
+\contentsline {section}{\numberline {4.1}오차(Errors)}{30}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}\(\hat {\mitsigma }^2\) 추정하기}{30}{subsection.4.1.1}
+\contentsline {section}{\numberline {4.2}계수(Coefficients)}{30}{section.4.2}
+\contentsline {section}{\numberline {4.3}분산(Variance)}{31}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}표집분포(Sampling distribution)}{31}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}표집분포의 표준오차(Standard errors)}{31}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4}\textbf {B}est \textbf {L}inear \textbf {U}nbiased \textbf {E}stimator}{31}{section.4.4}
+\contentsline {section}{\numberline {4.5}모델의 특정(specification)}{32}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}부적절한(irrelevant) 변수의 포함}{32}{subsection.4.5.1}
+\contentsline {subsubsection}{\numberline {4.5.1.1}잘못 특정된 모델: \(E(\hat {\mitbeta _1})\)과 \(Var(\hat {\mitbeta _1})\)에 미치는 영향}{32}{subsubsection.4.5.1.1}
+\contentsline {subsection}{\numberline {4.5.2}적절한(relevant) 변수의 제외}{32}{subsection.4.5.2}
+\contentsline {section}{\numberline {4.6}다양한 변수들 (Various variables)}{34}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}질적 변수(Qualitative variables)}{34}{subsection.4.6.1}
+\contentsline {subsection}{\numberline {4.6.2}상호작용(Interactions)}{35}{subsection.4.6.2}
+\contentsline {section}{\numberline {4.7}간단한 정리}{36}{section.4.7}
+\contentsline {subsection}{\numberline {4.7.1}개념들의 유기적인 연결}{36}{subsection.4.7.1}
+\contentsline {subsection}{\numberline {4.7.2}변수에 대한 심화}{38}{subsection.4.7.2}
+\contentsline {chapter}{\numberline {5}Recap of Interactions and Hypotheses Tests}{41}{chapter.5}
+\contentsline {section}{\numberline {5.1}상호작용 (Interactions)}{41}{section.5.1}
+\contentsline {section}{\numberline {5.2}상호작용의 이해: Brambor et al.\nobreakspace {}(2006)}{42}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}왜 조건적 가설을 수립하고 검증하기 위해서는 상호작용 모델을 사용해야만 하는가?}{43}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}왜 상호작용 모델에 모든 구성항을 다 포함해야할까?}{43}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}왜 실질적으로 유의미한 한계효과와 표준오차를 보여주어야 하는가?}{44}{subsection.5.2.3}
+\contentsline {section}{\numberline {5.3}상호작용항의 이해: 경험적 분석}{44}{section.5.3}
+\contentsline {section}{\numberline {5.4}소결: 상호작용과 가설검정}{48}{section.5.4}
+\contentsline {chapter}{\numberline {6}Statistical Significance and Confidence Intervals}{49}{chapter.6}
+\contentsline {section}{\numberline {6.1}영가설 유의성 검정 (Null Hypothesis Significance Testing; NHST)}{49}{section.6.1}
+\contentsline {section}{\numberline {6.2}영가설의 기각 이후}{51}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}\(\mitbeta _k\)에 대한 가설검정?}{54}{subsection.6.2.1}
+\contentsline {section}{\numberline {6.3}\(\mitbeta _k\)와 \(\hat {\mitbeta _k}\)에 대한 또 다른 접근}{54}{section.6.3}
+\contentsline {section}{\numberline {6.4}신뢰구간(confidence interval)}{56}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}신뢰구간 구하기}{56}{subsection.6.4.1}
+\contentsline {chapter}{\numberline {7}Matrix OLS and Non-Parametric Bootstrapping (NPBS)}{57}{chapter.7}
+\contentsline {section}{\numberline {7.1}행렬? 벡터? 전치행렬? 역행렬?}{57}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}행렬 OLS에서의 가우스-마르코프}{60}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}표집분포 (Sampling distribution)}{60}{subsection.7.1.2}
+\contentsline {subsection}{\numberline {7.1.3}행렬 OLS의 유용성}{61}{subsection.7.1.3}
+\contentsline {subsection}{\numberline {7.1.4}행렬 OLS, R로 보기}{61}{subsection.7.1.4}
+\contentsline {section}{\numberline {7.2}비모수 부트스트랩(Nonparametric Bootstrap: NPBS)}{63}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}기본 아이디어}{63}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}부트스트랩\ldots {} 어디다 써먹지?}{65}{subsection.7.2.2}
+\contentsline {subsection}{\numberline {7.2.3}부트스트랩 R로 보기: 비모수 부트스트랩의 추출횟수와 결과}{65}{subsection.7.2.3}
+\contentsline {subsection}{\numberline {7.2.4}부트스트랩 R로 보기(2): 신뢰구간과 점추정치}{68}{subsection.7.2.4}
+\contentsline {chapter}{\numberline {8}Parametric Bootstrapping: We came, we saw, we CLARIFYed}{71}{chapter.8}
+\contentsline {subsection}{\numberline {8.0.1}비모수 부트스트랩을 통해 얻는 것 (1)}{71}{subsection.8.0.1}
+\contentsline {subsection}{\numberline {8.0.2}비모수 부트스트랩을 통해 얻는 것 (2)}{72}{subsection.8.0.2}
+\contentsline {subsection}{\numberline {8.0.3}비모수 부트스트랩을 통해 얻는 것 (3)}{72}{subsection.8.0.3}
+\contentsline {section}{\numberline {8.1}모수적 부트스트랩}{72}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}평균과 불확실성을 추정하기}{72}{subsection.8.1.1}
+\contentsline {subsection}{\numberline {8.1.2}King et al.\nobreakspace {}(2000)}{73}{subsection.8.1.2}
+\contentsline {subsubsection}{\numberline {8.1.2.1}Title: Making the Most of Statistical Analyses: Improving Interpretation and Presentation}{73}{subsubsection.8.1.2.1}
+\contentsline {subsubsection}{\numberline {8.1.2.2}Practice the King et al.\nobreakspace {}(2000)!}{74}{subsubsection.8.1.2.2}
+\contentsline {section}{\numberline {8.2}비모수 부트스트랩 vs.\nobreakspace {}모수적 부트스트랩}{79}{section.8.2}
+\contentsline {section}{\numberline {8.3}조금 더 나아가기: Hainmueller, Mummolo, and Xu (2019)}{80}{section.8.3}
+\contentsline {subsection}{\numberline {8.3.1}Hainmueller et al.\nobreakspace {}(2019)의 주장과 Brambor et al.\nobreakspace {}(2006)에 대한 비판}{80}{subsection.8.3.1}
+\contentsline {subsection}{\numberline {8.3.2}Hainmueller et al.\nobreakspace {}(2019)의 대안}{81}{subsection.8.3.2}
+\contentsline {subsubsection}{\numberline {8.3.2.1}첫 번째 전략}{81}{subsubsection.8.3.2.1}
+\contentsline {subsubsection}{\numberline {8.3.2.2}두 번째 전략}{81}{subsubsection.8.3.2.2}

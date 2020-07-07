@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter7 Matrix OLS and Non-Parametric Bootstrapping (NPBS) | Advanced Statistics and Data Analysis: Korean Version</title>
+  <meta name="description" content="Chapter7 Matrix OLS and Non-Parametric Bootstrapping (NPBS) | Advanced Statistics and Data Analysis: Korean Version" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter7 Matrix OLS and Non-Parametric Bootstrapping (NPBS) | Advanced Statistics and Data Analysis: Korean Version" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter7 Matrix OLS and Non-Parametric Bootstrapping (NPBS) | Advanced Statistics and Data Analysis: Korean Version" />
+  
+  
+  
+
+<meta name="author" content="Sanghoon Park" />
+
+
+<meta name="date" content="2020-07-03" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="statistical-significance-and-confidence-intervals.html"/>
+<link rel="next" href="basics-for-advanced-linear-regression-models-part-i-1.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
+<li class="chapter" data-level="2" data-path="what-we-are-doing-in-this-course.html"><a href="what-we-are-doing-in-this-course.html"><i class="fa fa-check"></i><b>2</b> What We Are Doing in This Course?</a><ul>
+<li class="chapter" data-level="2.1" data-path="what-we-are-doing-in-this-course.html"><a href="what-we-are-doing-in-this-course.html#우리가-사용하는-자료"><i class="fa fa-check"></i><b>2.1</b> 우리가 사용하는 자료</a></li>
+<li class="chapter" data-level="2.2" data-path="what-we-are-doing-in-this-course.html"><a href="what-we-are-doing-in-this-course.html#추론inference과-변수variables-그리고-측정-수준척도"><i class="fa fa-check"></i><b>2.2</b> 추론(Inference)과 변수(variables), 그리고 측정 수준(척도)</a></li>
+<li class="chapter" data-level="2.3" data-path="what-we-are-doing-in-this-course.html"><a href="what-we-are-doing-in-this-course.html#선형회귀모델-간단히-다시보기"><i class="fa fa-check"></i><b>2.3</b> 선형회귀모델 간단히 다시보기</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="basics-for-advanced-linear-regression-models-part-i.html"><a href="basics-for-advanced-linear-regression-models-part-i.html"><i class="fa fa-check"></i><b>3</b> Basics for Advanced Linear Regression Models: Part I</a><ul>
+<li class="chapter" data-level="3.1" data-path="basics-for-advanced-linear-regression-models-part-i.html"><a href="basics-for-advanced-linear-regression-models-part-i.html#beta_1에-대하여"><i class="fa fa-check"></i><b>3.1</b> <span class="math inline">\(\beta_1\)</span>에 대하여</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="basics-for-advanced-linear-regression-models-part-i.html"><a href="basics-for-advanced-linear-regression-models-part-i.html#eux의-의미"><i class="fa fa-check"></i><b>3.1.1</b> <span class="math inline">\(E(u|x)\)</span>의 의미</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="basics-for-advanced-linear-regression-models-part-i.html"><a href="basics-for-advanced-linear-regression-models-part-i.html#모집단-회귀-함수population-regression-function-prf"><i class="fa fa-check"></i><b>3.2</b> 모집단 회귀 함수(Population Regression Function; PRF)</a></li>
+<li class="chapter" data-level="3.3" data-path="basics-for-advanced-linear-regression-models-part-i.html"><a href="basics-for-advanced-linear-regression-models-part-i.html#추정-조건들들로부터-도출"><i class="fa fa-check"></i><b>3.3</b> 추정-조건들들로부터 도출</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="basics-for-advanced-linear-regression-models-part-i.html"><a href="basics-for-advanced-linear-regression-models-part-i.html#가정1.과-제약1."><i class="fa fa-check"></i><b>3.3.1</b> 가정1.과 제약1.</a></li>
+<li class="chapter" data-level="3.3.2" data-path="basics-for-advanced-linear-regression-models-part-i.html"><a href="basics-for-advanced-linear-regression-models-part-i.html#가정2.와-제약2."><i class="fa fa-check"></i><b>3.3.2</b> 가정2.와 제약2.</a></li>
+<li class="chapter" data-level="3.3.3" data-path="basics-for-advanced-linear-regression-models-part-i.html"><a href="basics-for-advanced-linear-regression-models-part-i.html#언제-beta_1의-값이-커질까"><i class="fa fa-check"></i><b>3.3.3</b> 언제 <span class="math inline">\(\beta_1\)</span>의 값이 커질까?</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="basics-for-advanced-linear-regression-models-part-i.html"><a href="basics-for-advanced-linear-regression-models-part-i.html#추정-잔차의-최소화"><i class="fa fa-check"></i><b>3.4</b> 추정-잔차의 최소화</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="basics-for-advanced-linear-regression-models-part-i.html"><a href="basics-for-advanced-linear-regression-models-part-i.html#표본-회귀-함수-sample-regression-function-srf"><i class="fa fa-check"></i><b>3.4.1</b> 표본 회귀 함수 (Sample regression function, SRF)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="basics-for-advanced-linear-regression-models-part-i.html"><a href="basics-for-advanced-linear-regression-models-part-i.html#모집단-회귀-함수와-표본-회귀-함수의-이해"><i class="fa fa-check"></i><b>3.5</b> 모집단 회귀 함수와 표본 회귀 함수의 이해</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="basics-for-advanced-linear-regression-models-part-i.html"><a href="basics-for-advanced-linear-regression-models-part-i.html#일종의-총합들-sums"><i class="fa fa-check"></i><b>3.5.1</b> 일종의 “총합들” (sums)</a></li>
+<li class="chapter" data-level="3.5.2" data-path="basics-for-advanced-linear-regression-models-part-i.html"><a href="basics-for-advanced-linear-regression-models-part-i.html#r로-계산해보기"><i class="fa fa-check"></i><b>3.5.2</b> <strong>R</strong>로 계산해보기</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="basics-for-advanced-linear-regression-models-part-ii.html"><a href="basics-for-advanced-linear-regression-models-part-ii.html"><i class="fa fa-check"></i><b>4</b> Basics for Advanced Linear Regression Models: Part II</a><ul>
+<li class="chapter" data-level="4.1" data-path="basics-for-advanced-linear-regression-models-part-ii.html"><a href="basics-for-advanced-linear-regression-models-part-ii.html#오차errors"><i class="fa fa-check"></i><b>4.1</b> 오차(Errors)</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="basics-for-advanced-linear-regression-models-part-ii.html"><a href="basics-for-advanced-linear-regression-models-part-ii.html#hatsigma2-추정하기"><i class="fa fa-check"></i><b>4.1.1</b> <span class="math inline">\(\hat{\sigma}^2\)</span> 추정하기</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="basics-for-advanced-linear-regression-models-part-ii.html"><a href="basics-for-advanced-linear-regression-models-part-ii.html#계수coefficients"><i class="fa fa-check"></i><b>4.2</b> 계수(Coefficients)</a></li>
+<li class="chapter" data-level="4.3" data-path="basics-for-advanced-linear-regression-models-part-ii.html"><a href="basics-for-advanced-linear-regression-models-part-ii.html#분산variance"><i class="fa fa-check"></i><b>4.3</b> 분산(Variance)</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="basics-for-advanced-linear-regression-models-part-ii.html"><a href="basics-for-advanced-linear-regression-models-part-ii.html#표집분포sampling-distribution"><i class="fa fa-check"></i><b>4.3.1</b> 표집분포(Sampling distribution)</a></li>
+<li class="chapter" data-level="4.3.2" data-path="basics-for-advanced-linear-regression-models-part-ii.html"><a href="basics-for-advanced-linear-regression-models-part-ii.html#표집분포의-표준오차standard-errors"><i class="fa fa-check"></i><b>4.3.2</b> 표집분포의 표준오차(Standard errors)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="basics-for-advanced-linear-regression-models-part-ii.html"><a href="basics-for-advanced-linear-regression-models-part-ii.html#best-linear-unbiased-estimator"><i class="fa fa-check"></i><b>4.4</b> <strong>B</strong>est <strong>L</strong>inear <strong>U</strong>nbiased <strong>E</strong>stimator</a></li>
+<li class="chapter" data-level="4.5" data-path="basics-for-advanced-linear-regression-models-part-ii.html"><a href="basics-for-advanced-linear-regression-models-part-ii.html#모델의-특정specification"><i class="fa fa-check"></i><b>4.5</b> 모델의 특정(specification)</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="basics-for-advanced-linear-regression-models-part-ii.html"><a href="basics-for-advanced-linear-regression-models-part-ii.html#부적절한irrelevant-변수의-포함"><i class="fa fa-check"></i><b>4.5.1</b> 부적절한(irrelevant) 변수의 포함</a></li>
+<li class="chapter" data-level="4.5.2" data-path="basics-for-advanced-linear-regression-models-part-ii.html"><a href="basics-for-advanced-linear-regression-models-part-ii.html#적절한relevant-변수의-제외"><i class="fa fa-check"></i><b>4.5.2</b> 적절한(relevant) 변수의 제외</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="basics-for-advanced-linear-regression-models-part-ii.html"><a href="basics-for-advanced-linear-regression-models-part-ii.html#다양한-변수들-various-variables"><i class="fa fa-check"></i><b>4.6</b> 다양한 변수들 (Various variables)</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="basics-for-advanced-linear-regression-models-part-ii.html"><a href="basics-for-advanced-linear-regression-models-part-ii.html#질적-변수qualitative-variables"><i class="fa fa-check"></i><b>4.6.1</b> 질적 변수(Qualitative variables)</a></li>
+<li class="chapter" data-level="4.6.2" data-path="basics-for-advanced-linear-regression-models-part-ii.html"><a href="basics-for-advanced-linear-regression-models-part-ii.html#상호작용interactions"><i class="fa fa-check"></i><b>4.6.2</b> 상호작용(Interactions)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="basics-for-advanced-linear-regression-models-part-ii.html"><a href="basics-for-advanced-linear-regression-models-part-ii.html#간단한-정리"><i class="fa fa-check"></i><b>4.7</b> 간단한 정리</a><ul>
+<li class="chapter" data-level="4.7.1" data-path="basics-for-advanced-linear-regression-models-part-ii.html"><a href="basics-for-advanced-linear-regression-models-part-ii.html#개념들의-유기적인-연결"><i class="fa fa-check"></i><b>4.7.1</b> 개념들의 유기적인 연결</a></li>
+<li class="chapter" data-level="4.7.2" data-path="basics-for-advanced-linear-regression-models-part-ii.html"><a href="basics-for-advanced-linear-regression-models-part-ii.html#변수에-대한-심화"><i class="fa fa-check"></i><b>4.7.2</b> 변수에 대한 심화</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="recap-of-interactions-and-hypotheses-tests.html"><a href="recap-of-interactions-and-hypotheses-tests.html"><i class="fa fa-check"></i><b>5</b> Recap of Interactions and Hypotheses Tests</a><ul>
+<li class="chapter" data-level="5.1" data-path="recap-of-interactions-and-hypotheses-tests.html"><a href="recap-of-interactions-and-hypotheses-tests.html#상호작용-interactions"><i class="fa fa-check"></i><b>5.1</b> 상호작용 (Interactions)</a></li>
+<li class="chapter" data-level="5.2" data-path="recap-of-interactions-and-hypotheses-tests.html"><a href="recap-of-interactions-and-hypotheses-tests.html#상호작용의-이해-brambor-et-al.-2006"><i class="fa fa-check"></i><b>5.2</b> 상호작용의 이해: Brambor et al. (2006)</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="recap-of-interactions-and-hypotheses-tests.html"><a href="recap-of-interactions-and-hypotheses-tests.html#왜-조건적-가설을-수립하고-검증하기-위해서는-상호작용-모델을-사용해야만-하는가"><i class="fa fa-check"></i><b>5.2.1</b> 왜 조건적 가설을 수립하고 검증하기 위해서는 상호작용 모델을 사용해야만 하는가?</a></li>
+<li class="chapter" data-level="5.2.2" data-path="recap-of-interactions-and-hypotheses-tests.html"><a href="recap-of-interactions-and-hypotheses-tests.html#왜-상호작용-모델에-모든-구성항을-다-포함해야할까"><i class="fa fa-check"></i><b>5.2.2</b> 왜 상호작용 모델에 모든 구성항을 다 포함해야할까?</a></li>
+<li class="chapter" data-level="5.2.3" data-path="recap-of-interactions-and-hypotheses-tests.html"><a href="recap-of-interactions-and-hypotheses-tests.html#왜-실질적으로-유의미한-한계효과와-표준오차를-보여주어야-하는가"><i class="fa fa-check"></i><b>5.2.3</b> 왜 실질적으로 유의미한 한계효과와 표준오차를 보여주어야 하는가?</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="recap-of-interactions-and-hypotheses-tests.html"><a href="recap-of-interactions-and-hypotheses-tests.html#상호작용항의-이해-경험적-분석"><i class="fa fa-check"></i><b>5.3</b> 상호작용항의 이해: 경험적 분석</a></li>
+<li class="chapter" data-level="5.4" data-path="recap-of-interactions-and-hypotheses-tests.html"><a href="recap-of-interactions-and-hypotheses-tests.html#소결-상호작용과-가설검정"><i class="fa fa-check"></i><b>5.4</b> 소결: 상호작용과 가설검정</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="statistical-significance-and-confidence-intervals.html"><a href="statistical-significance-and-confidence-intervals.html"><i class="fa fa-check"></i><b>6</b> Statistical Significance and Confidence Intervals</a><ul>
+<li class="chapter" data-level="6.1" data-path="statistical-significance-and-confidence-intervals.html"><a href="statistical-significance-and-confidence-intervals.html#영가설-유의성-검정-null-hypothesis-significance-testing-nhst"><i class="fa fa-check"></i><b>6.1</b> 영가설 유의성 검정 (Null Hypothesis Significance Testing; NHST)</a></li>
+<li class="chapter" data-level="6.2" data-path="statistical-significance-and-confidence-intervals.html"><a href="statistical-significance-and-confidence-intervals.html#영가설의-기각-이후"><i class="fa fa-check"></i><b>6.2</b> 영가설의 기각 이후</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="statistical-significance-and-confidence-intervals.html"><a href="statistical-significance-and-confidence-intervals.html#beta_k에-대한-가설검정"><i class="fa fa-check"></i><b>6.2.1</b> <span class="math inline">\(\beta_k\)</span>에 대한 가설검정?</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="statistical-significance-and-confidence-intervals.html"><a href="statistical-significance-and-confidence-intervals.html#beta_k와-hatbeta_k에-대한-또-다른-접근"><i class="fa fa-check"></i><b>6.3</b> <span class="math inline">\(\beta_k\)</span>와 <span class="math inline">\(\hat{\beta_k}\)</span>에 대한 또 다른 접근</a></li>
+<li class="chapter" data-level="6.4" data-path="statistical-significance-and-confidence-intervals.html"><a href="statistical-significance-and-confidence-intervals.html#신뢰구간confidence-interval"><i class="fa fa-check"></i><b>6.4</b> 신뢰구간(confidence interval)</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="statistical-significance-and-confidence-intervals.html"><a href="statistical-significance-and-confidence-intervals.html#신뢰구간-구하기"><i class="fa fa-check"></i><b>6.4.1</b> 신뢰구간 구하기</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="matrix-ols-and-non-parametric-bootstrapping-npbs.html"><a href="matrix-ols-and-non-parametric-bootstrapping-npbs.html"><i class="fa fa-check"></i><b>7</b> Matrix OLS and Non-Parametric Bootstrapping (NPBS)</a><ul>
+<li class="chapter" data-level="7.1" data-path="matrix-ols-and-non-parametric-bootstrapping-npbs.html"><a href="matrix-ols-and-non-parametric-bootstrapping-npbs.html#행렬-벡터-전치행렬-역행렬"><i class="fa fa-check"></i><b>7.1</b> 행렬? 벡터? 전치행렬? 역행렬?</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="matrix-ols-and-non-parametric-bootstrapping-npbs.html"><a href="matrix-ols-and-non-parametric-bootstrapping-npbs.html#행렬-ols에서의-가우스-마르코프"><i class="fa fa-check"></i><b>7.1.1</b> 행렬 OLS에서의 가우스-마르코프</a></li>
+<li class="chapter" data-level="7.1.2" data-path="matrix-ols-and-non-parametric-bootstrapping-npbs.html"><a href="matrix-ols-and-non-parametric-bootstrapping-npbs.html#표집분포-sampling-distribution"><i class="fa fa-check"></i><b>7.1.2</b> 표집분포 (Sampling distribution)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="basics-for-advanced-linear-regression-models-part-i-1.html"><a href="basics-for-advanced-linear-regression-models-part-i-1.html"><i class="fa fa-check"></i><b>8</b> Basics for Advanced Linear Regression Models: Part I</a></li>
+<li class="chapter" data-level="9" data-path="basics-for-advanced-linear-regression-models-part-i-2.html"><a href="basics-for-advanced-linear-regression-models-part-i-2.html"><i class="fa fa-check"></i><b>9</b> Basics for Advanced Linear Regression Models: Part I</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Advanced Statistics and Data Analysis: Korean Version</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="matrix-ols-and-non-parametric-bootstrapping-npbs" class="section level1">
+<h1><span class="header-section-number">Chapter7</span> Matrix OLS and Non-Parametric Bootstrapping (NPBS)</h1>
+<p>최소자승법(Ordinary least squared)을 이용한 선형회귀분석, 이른바 <code>OLS</code>에서 <code>BLUE</code>란 무엇을 의미하는가? 그리고 표집분포(sampling distribution)란 무엇인가? 모델에 부적절한 변수를 포함시켰을 때, 또는 적절한 변수를 누락시켰을 때 나타날 수 있는 문제들은 무엇이 있는가? 이제는 이와 같은 질문들에 대해 어느 정도 답을 하실 수 있으리라 생각합니다. 또, 아래의 두 선형회귀모델에 대해서 해석할 수 있게 되셨으리라고 생각합니다.</p>
+<ul>
+<li><p><span class="math inline">\(y = \alpha + \beta_1x + \beta_2z + \beta_3xz\)</span></p></li>
+<li><p><span class="math inline">\(y - \alpha + \beta_1I(x = 1) + \beta_2I(x = 2)\)</span>, 이고 이때 <span class="math inline">\(x \in\{0,1,2\}\)</span>.</p></li>
+</ul>
+<p>마지막으로 가설검정(hypothesis testing)의 기본 논리에 대해서도 조금은 익숙해졌을 것입니다. 어째서 우리는 연구가설(혹은 대안가설)이 맞다라고 직접적으로 검증하지 못하고 경험적 근거를 통해 영가설을 기각하는 “약간은 헷갈릴법한” 방법을 사용하는지 말입니다.</p>
+<p>이 챕터에서는 <code>OLS</code>를 다시 한 번 다룰 건데요, 이전과는 다르게 행렬(matrix)을 통해 접근해보고자 합니다. 고등학교 때였나, 행렬이 교과과정에 포함되어 있어 의무적으로 다루었던 것 같기는 한데 혹시 모르니 처음부터 차근차근 살펴보도록 하겠습니다.</p>
+<div id="행렬-벡터-전치행렬-역행렬" class="section level2">
+<h2><span class="header-section-number">7.1</span> 행렬? 벡터? 전치행렬? 역행렬?</h2>
+<p>저도 <code>OLS</code> 기본을 마무리하고 좀 더 깊게 들어갔을 때, 갑자기 [오랜만에] 등장한 이 행렬 때문에 당황했습니다. 하지만 <code>R</code>로 행렬들이 계산되면서 변화하는 것을 추적하며 공부하면 예전에 수학의 정석 붙잡고 노트에 필기하며 낑낑대었던 것보다는 훨씬 편하게 이해하실 수 있을 겁니다.</p>
+<p>대체 행렬(matrix), 벡터(vector), 전치행렬(transposed matrix), 역행렬(inversed matrix)라는 이놈들이 왜 <code>OLS</code>를 공부하는 데 등장하는 것일까요? 그리고 <code>OLS</code>에서 <span class="math inline">\(X\beta\)</span>가 제대로 돌아가기 위해서 가정되어야 하는 것들은 무엇이 있을까요? 마지막으로 이것들을 <code>R</code>로 어떻게 보여줄 수 있을까요? 참고로 <span class="math inline">\(X\beta\)</span>는 <code>OLS</code>를 통해 얻은 일련의 계수값을 <span class="math inline">\(\beta\)</span>라는 하나의 집단으로 나타내고 <span class="math inline">\(X\)</span>도 마찬가지로 모델에 포함된 설명변수 일체를 표시한 것입니다.</p>
+<p>행렬과 벡터를 정의하기에 앞서, 우리는 스칼라(scalar)라는 것에 대해서 알아야만 합니다. 저도 정치학을 전공한 사람이고 방법론은 연구문제를 풀기 위한 도구로 공부하는 사람이기 때문에 엄청 깊은 증명이나 디테일에 집착하지는 않겠습니다. 저도 지금 큰 문제없이 연구방법을 통해 연구문제들을 풀어가고 있으니, 제가 이해한 정도와 비슷한 정도로만 이해하셔도 연구에는 큰 지장은 없으실겁니다. 물론 주정공이나 부전공이 방법론이라던가 하는 경우에는 조금 얘기가 달라지겠죠? 어디까지나 부외자에 한정된 이야기입니다.</p>
+<p>스칼라는 하나의 차원에서 측정된 수치화된 결과를 말합니다. 따라서 스칼라는 방향에 대한 정보는 가지지 않고 크기(magnitude)에 대한 정보만 가지고 있다고 할 수 있습니다. 벡터는 이런 스칼라들의 집합입니다. 스칼라와는 다르게 벡터는 크기뿐아니라 방향에 대한 정보도 가지고 있습니다. 예를 들면, <span class="math inline">\(n\)</span>개의 스칼라를 가진 <span class="math inline">\(a\)</span>라는 벡터가 있다고 해보겠습니다. 우리는 이 벡터를 <span class="math inline">\(n\)</span>차원의 벡터라고 부를 수 있습니다. 이런 벡터는 아래의 수식 과 같이 열 또는 행으로 나타낼 수 있습니다.</p>
+<p><span class="math display">\[\begin{equation} \label{eq:1}
+a = \begin{bmatrix}a_1 \\ a_2 \\ a_3 \\ \vdots \\ a_n\end{bmatrix} \text{ or } a = \begin{bmatrix}a_1, a_2, a_3, \cdots, a_n\end{bmatrix}
+\end{equation}\]</span></p>
+<p>그렇다면 행렬은 무엇일까요? 행렬은 행과 열로 요소들(숫자일 수도 있고 일종의 함수들일 수도 있습니다)이 사각형의 형태를 띄게끔 배열된 결과물입니다. 행렬이라는 이름이 행(raw)과 열(column)이 합쳐진 것이니까 이 정도는 쉽게 유추할 수 있습니다. 행렬을 구성하는 행과 열의 수를 가지고 우리는 행렬의 차원(dimension)이 어떻게 되는지를 말할 수 있습니다. 예를 들면, 아래의 수식 는 요소들의 배열, 즉 행렬의 모습을 보여주고 있습니다. <span class="math inline">\(j\)</span>는 행을, <span class="math inline">\(k\)</span>는 열을 의미하는데요, <span class="math inline">\(a_{jk}\)</span>는 <span class="math inline">\(j\)</span>-행과 <span class="math inline">\(k\)</span>-열에 위치한 요소를 나타냅니다.</p>
+<p><span class="math display">\[\begin{equation} \label{eq:2}
+A = \begin{bmatrix}a_{jk}\end{bmatrix} = 
+\begin{bmatrix} 
+a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\ 
+a_{21} &amp; a_{21} &amp; \cdots &amp; a_{2n} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn} \\ \end{bmatrix}
+\end{equation}\]</span></p>
+<p>행렬의 정의에 따르면, 우리는 벡터 역시도 일종의 행렬이라고 이해할 수 있습니다. 단 하나의 행(1<span class="math inline">\(\times n\)</span>) 또는 열(<span class="math inline">\(m \times1\)</span>)로 구성된 행렬인 거죠. 그리고 행렬을 전치(transposition)한다는 것은 말 그대로 위치(position)를 뒤바꾸는 것(trans)이기 때문에 행렬의 행과 열을 서로 뒤바꾼다는 것을 의미합니다(수식 ). 예를 들면 2개의 행과 3개의 열을 가지고 있던 <span class="math inline">\(2\times3\)</span> 행렬이 3개의 행과 2개의 열을 가진 <span class="math inline">\(3\times 2\)</span>의 행렬로 전치되는 것입니다.</p>
+<p><span class="math display">\[\begin{equation} \label{eq:3}
+A = \begin{bmatrix}a_{jk}\end{bmatrix} \Rightarrow A^T = \begin{bmatrix}a_{kj}\end{bmatrix} = 
+\begin{bmatrix} 
+a_{11} &amp; a_{21} &amp; \cdots &amp; a_{m1} \\ 
+a_{12} &amp; a_{22} &amp; \cdots &amp; a_{m2} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+a_{1n} &amp; a_{2n} &amp; \cdots &amp; a_{mn} \\ \end{bmatrix}
+\end{equation}\]</span></p>
+<p>주어진 행렬의 곱셈에 대한 역원을 역행렬이라고 합니다.모든 행렬이 반드시 그 역행렬을 가지는 것은 아닙니다. <code>A</code>라는 행렬이 역행렬을 가진다고 한다면, 우리는 <code>A</code>라는 행렬이 “역행렬을 가질 수 있는 행렬”이라는 의미에서 가역행렬(invertible matrix)라고 부릅니다. 반면에 역행렬을 가지지 않는 행렬을 특이행렬(singular matrix)라고 합니다. 만약에 어떤 행렬이 역행렬을 가진다면, 이때 그 역행렬은 가역행렬에 대해 유일한 역행렬입니다. 1:1 관계가 성립한다는 거죠. <code>A</code>라는 행렬에 대한 역행렬을 우리는 <code>A</code><span class="math inline">\(^{-1}\)</span>라고 표기합니다.</p>
+<p>우리는 행렬을 이용해서 단선순형회귀모델을 표현할 수 있습니다. 이때 필요한 것은 <span class="math inline">\(x\)</span>와 <span class="math inline">\(y\)</span>로, 실제 관측치 <span class="math inline">\(x_i\)</span>를 요소로 하는 예측변수의 행렬이 모델의 계수값이라고 할 수 있는 행렬을 거치게 되면 <span class="math inline">\(\hat{y}_i\)</span>의 행렬을 산출하는 논리입니다. 마찬가지로 다중선형회귀모델도 행렬로 표현할 수 있습니다. 그러나 이때에는 <span class="math inline">\(y_i\)</span>의 변화를 설명하기 위해 두 개 이상의 예측변수들을 나타내는 행렬이 필요합니다. 즉, 최소 세 차원 이상의 행렬이 필요하다는 것입니다.</p>
+<p>앞서 정리한 것처럼 벡터는 스칼라들의 집합입니다. 따라서 우리는 <span class="math inline">\(k\)</span>개의 예측변수들과 <span class="math inline">\(n\)</span>개의 관측치를 이용한 행렬들로 수식 와 같이 다중선형회귀모델을 나타낼 수 있습니다.</p>
+<p><span class="math display">\[\begin{equation} \label{eq:4}
+y = \begin{bmatrix}y_1 \\ y_2 \\ \vdots \\ y_n \end{bmatrix}
+X = \begin{bmatrix}1 &amp; x_{21} &amp; x_{31} &amp; \cdots &amp; x_{k1}\\
+                   1 &amp; x_{22} &amp; x_{32} &amp; \cdots &amp; x_{k2}\\
+              \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots\\
+                   1 &amp; x_{2n} &amp; x_{3n} &amp; \cdots &amp; x_{kn}\\\end{bmatrix}
+\beta = \begin{bmatrix} \beta_1 \\ \beta_2 \\ \vdots \\ \beta_n \\\end{bmatrix}
+u = \begin{bmatrix} u_1 \\ u_2 \\ \vdots \\ u_n \\\end{bmatrix}
+\end{equation}\]</span></p>
+<p>수식 에 입각해 우리는 선형모델을 각각의 관측된 <span class="math inline">\(y\)</span>값과 <span class="math inline">\(X\)</span>, 그리고 추정된 <span class="math inline">\(\beta\)</span>와 <span class="math inline">\(u\)</span>를 가지로 수식 로 보여줄 수 있습니다.</p>
+<p><span class="math display">\[\begin{equation} \label{eq:5}
+\begin{split}
+&amp;y_1 = \beta_1 + \beta_2x_{21} +\cdots+\beta_kx_{k1} + u_1\\
+&amp;y_2 = \beta_1 + \beta_2x_{22} +\cdots+\beta_kx_{k2} + u_2\\
+&amp;\vdots\\
+&amp;y_n = \beta_1 + \beta_2x_{2n} +\cdots+\beta_kx_{kn} + u_n\\
+\end{split}
+\end{equation}\]</span></p>
+<p>여기서 <span class="math inline">\(X\)</span>와 <span class="math inline">\(y\)</span>는 실제 관측된 데이터로부터 나온 예측변수와 종속변수의 개별 관측값을 의미합니다. 따라서 현실의 데이터는 항상 우리가 알지 못하는 요인들에 의해 영향을 받을 수 있기 때문에 우리는 이 ‘관측하지 못한’ 그리고 ‘비체계적인’ 요인들을 나타내는 오차항을 모델에 포함시킵니다. 그러므로 다중선형회귀모델을 보여주는 행렬은 아래의 수식 와 같이 정리할 수 있습니다.</p>
+<p><span class="math display">\[\begin{equation} \label{eq:6}
+y = \begin{bmatrix}y_1 \\ y_2 \\ \vdots \\ y_n \end{bmatrix} = 
+\begin{bmatrix}1 &amp; x_{21} &amp; x_{31} &amp; \cdots &amp; x_{k1}\\
+1 &amp; x_{22} &amp; x_{32} &amp; \cdots &amp; x_{k2}\\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots\\
+1 &amp; x_{2n} &amp; x_{3n} &amp; \cdots &amp; x_{kn}\\\end{bmatrix}
+\begin{bmatrix} \beta_1 \\ \beta_2 \\ \vdots \\ \beta_n \\\end{bmatrix} + 
+\begin{bmatrix} u_1 \\ u_2 \\ \vdots \\ u_n \\\end{bmatrix}
+\end{equation}\]</span></p>
+<p>그리고 예측변수 <span class="math inline">\(X\)</span>의 1은 절편값을 나타냅니다. 행렬 계산 공식을 떠올리지 못하더라도 이 수식 을 직관적으로 이해해보자면, 관측된 종속변수 <span class="math inline">\(y_i\)</span>는 관측된 <span class="math inline">\(k\)</span>개의 예측변수의 관측치들인 <span class="math inline">\(x_{ki}\)</span>가 모델에 의해 추정된 <span class="math inline">\(\beta\)</span>들과 결합하여 계산되는 예측값 <span class="math inline">\(\hat{y}_i\)</span>에 현실에서 관측하지 못한 오차들이 더해진 결과라는 것입니다. 우리는 위의 행렬을 계산해서 <code>OLS</code>, 즉 오차의 최소제곱합(least sum of squared errors)을 구할 수 있습니다. 이건 그냥 참고로 알아두세요.</p>
+<p><span class="math display">\[\begin{equation*}
+\begin{split}
+S&amp;=\Sigma^n_{i=1}\epsilon^2_i = \Sigma^n_{i=1}(Y_i - \beta_1 - \beta_2X_i1 - \cdots - \beta_kX_{ik})^2\\
+ &amp;=\epsilon^{\prime}\epsilon = (Y - X\beta)^{\prime}(Y-X\beta) = Y^{\prime}Y - Y^{\prime}X\beta - \beta^{\prime}X^{\prime}Y + \beta^{\prime}X^{\prime}X\beta
+\end{split}
+\end{equation*}\]</span></p>
+<p>이렇게 계산된 <span class="math inline">\(S\)</span>에 편미분을 취하면?</p>
+<p><span class="math display">\[\begin{equation*}
+\begin{split}
+\frac{\partial S}{\partial \beta} =&amp;-2X^{\prime}Y + 2X^{\prime}Y\beta = 0\\
+\rightarrow&amp;X^{\prime}X\hat{\beta}= X^{\prime}Y\\
+\rightarrow&amp;\hat{\beta} = (X^{\prime}X)^{-1}X^{\prime}Y
+\end{split}
+\end{equation*}\]</span></p>
+<p>이렇게 됩니다. 이 행렬계산을 통해서 <span class="math inline">\(\hat{\beta}_k\)</span>를 얻을 수 있고(이게 계수값이죠!), <code>R</code>은 이 행렬계산을 구현할 수 있습니다.</p>
+<p>우리가 수많은 변수들과 관측치들을 가지고 있다고 해봅시다. <span class="math inline">\(i \leq n\)</span>, 즉 <span class="math inline">\(n\)</span>개의 관측치를 가지고 있다고 할 때, 우리는
+<span class="math display">\[
+y_i = \alpha + \beta_1x_{i1} + \cdots + \beta_{K}x_{iK} + \epsilon_i
+\]</span></p>
+<p>라는 다중선형회귀모델을 구축할 수 있게 됩니다. 이는 예측변수들의 수에 절편까지를 고려한 <span class="math inline">\(K+1\)</span>개의 제한된 변수를 가진 함수를 가지 모델이라는 것을 의미하며, 우리는 이 모델에서 오차의 제곱합이 최소가 되는 계수값들을 구할 수가 있게 되는 것입니다. 조금 더 직관적이게 행렬을 보여드리자면,</p>
+<p><span class="math display">\[\begin{equation*}
+y = \begin{bmatrix}y_1 \\ y_2 \\ \vdots \\ y_n \end{bmatrix}, 
+x_k = \begin{bmatrix}x_{1k} \\ x_{2k} \\ \vdots &amp; x_{Nk}\end{bmatrix}, 
+\text{  그리고  },
+\epsilon = \begin{bmatrix} \epsilon_1 \\ \epsilon_2 \\ \vdots \\ \epsilon_n \\\end{bmatrix}
+\end{equation*}\]</span></p>
+<p>이라고 할 때, 각각의 <span class="math inline">\(y\)</span>, <span class="math inline">\(x_k\)</span>, <span class="math inline">\(\epsilon\)</span>은 <span class="math inline">\(N\times 1\)</span>의 벡터입니다. 관측된 종속변수, 예측변수, 그리고 오차항이죠. 이를 선형회귀모델에 집어넣으면 아래와 같이 다시 써볼 수 있습니다.</p>
+<p><span class="math display">\[\begin{equation*}
+y = \begin{bmatrix}y_1 \\ y_2 \\ \vdots \\ y_n \end{bmatrix} = \alpha + \beta_1
+\begin{bmatrix}x_{11} \\ x_{21} \\ \vdots &amp; x_{N1}\end{bmatrix} + \cdots + \beta_k\begin{bmatrix}x_{1K} \\ x_{2K} \\ \vdots &amp; x_{NK}\end{bmatrix} + v
+\end{equation*}\]</span></p>
+<p>이렇게 보면 조금 더 명확하죠? 우리가 지겹도록 보았던 <span class="math inline">\(y = \alpha + \beta_1x_1 + \cdots + \beta_kx_k + \epsilon\)</span>과 형태가 같습니다. 그런데 이렇게 길게 쓰는 건 너무 비효율적이니 계수값들의 벡터를 <span class="math inline">\(\beta = (\alpha\;\;\beta_k\;\;\cdots\;\; \beta_k)^{\prime}\)</span>라고 나타내고 예측변수들을 <span class="math inline">\(\textbf{X} = (1\;\;x_1\;\;\cdots\;\; x_k)\)</span>라고 표현합니다. 이때 <span class="math inline">\(\textbf{X}\)</span>는 <span class="math inline">\(N\times(K+1)\)</span>의 행렬이며, <span class="math inline">\(\beta\)</span>는 <span class="math inline">\(1\times(K+1)\)</span>의 벡터입니다. 이해하기는 어렵지 않겠죠? 왜냐면 예측변수들이야 변수들의 개수(<span class="math inline">\(K\)</span>)에 절편을 표현할 항이 하나 더 추가되서 (<span class="math inline">\(K+1\)</span>)에 실제 관측된 관측치의 수(<span class="math inline">\(N\)</span>)을 고려해준 것이고, 계수값은 변수들에 절편을 포함한 개수만큼 계산되는데 위에서 살펴본 것처럼 열로 표현되니까 벡터라고 할 수 있는 것입니다. 그렇다면 우리는 행렬로 나타내는 <code>OLS</code>를 다음과 같이 심플하게 보여줄 수 있습니다.
+<span class="math display">\[
+\textbf{y} = \textbf{X}\beta+\epsilon
+\]</span></p>
+<p>이 하나의 식이 모든 <span class="math inline">\(N\)</span>개의 관측치와 <span class="math inline">\(K\)</span>개의 예측변수들에 대한 정보를 함축하고 있는 것입니다.</p>
+<div id="행렬-ols에서의-가우스-마르코프" class="section level3">
+<h3><span class="header-section-number">7.1.1</span> 행렬 OLS에서의 가우스-마르코프</h3>
+<p>당연히 행렬 <code>OLS</code>도 우리가 이전 챕터들에서 보았던 <code>OLS</code>와 동일하니만큼 <code>OLS</code>의 기본가정, 가우스-마르코프 가정을 <span class="math inline">\(\textbf{y} = \textbf{X}\beta+\epsilon\)</span>을 이용해 보여줄 수 있습니다. 먼저 우리의 추정치로부터 잔차의 벡터를 얻어냅니다. 그냥 식의 좌변과 우변을 요리조리 옮겨주면 됩니다.</p>
+<p><span class="math display">\[
+ \hat{\epsilon} = \textbf{y}-\textbf{X}\hat{\beta}
+\]</span></p>
+<p>개별 종속변수의 관측치에서 우리가 추정한 계수—모델에 일련의 예측변수들의 관측치들을 하나하나 대입하여 계산된 예측값(<span class="math inline">\(\hat{y} = \textbf{X}\hat{\beta}\)</span>)을 제해주면 나오는 것이 우리가 모델로 설명하지 못한 종속변수의 변동(variations), 오차(errors)가 될 것입니다. 물론 표본을 가지고 하는 것이니 잔차(residuals)라고 하는 게 정확한 표현입니다. 그리고 우리는 이렇게 얻은 잔차의 제곱합을 최소한으로 하고 싶은거죠. 이게 <code>OLS</code>의 핵심이니까요. 최소로 만드는 값을 찾는 것은 여러 가지 방법이 있겠습니다만, 여기서는 편미분을 통해 제곱합이 0이 되는 해를 구하는 방식을 취하겠습니다.</p>
+<p><span class="math display">\[
+\frac{\partial \hat{\epsilon}^{\prime}\hat{\epsilon}}{\partial\hat{\beta}} = \frac{\partial(\textbf{y}-\textbf{X}\hat{\beta})^{\prime}(\textbf{y}-\textbf{X}\hat{\beta})}{\partial \hat{\beta}} = 2\textbf{X}^{\prime}\textbf{X}\hat{\beta}-2\textbf{X}^{\prime}\textbf{y} = 0
+\]</span></p>
+<p>여기서 <span class="math inline">\(\hat{\epsilon}^{\prime}\hat{\epsilon}\)</span>은 제곱합, <span class="math inline">\(\sum^{N}_{i=1}\epsilon^2_i\)</span>를 벡터로 보여준 것입니다. 아무튼 $ 2<sup>{}-2</sup>{} = 0$라고 할 때, 우리는 이 식을 다시 <span class="math inline">\(\hat{\beta} = (\textbf{X}^{\prime}\textbf{X})^{-1}\textbf{X}^{\prime}\textbf{y}\)</span>로 나타낼 수 있습니다. 이것이 회귀계수(물론 절편까지!)를 구하는 보다 간명한 해(solution)가 되겠습니다. 그리고 이때 회귀계수의 분산은 <span class="math inline">\(Var(\hat{\beta}) = \sigma^2(\textbf{X}^{\prime}\textbf{X})^{-1}\)</span>가 됩니다. <span class="math inline">\(Var(\hat{\beta})\)</span>는 <span class="math inline">\((K+1)\times(K+1)\)</span>의 차원을 갖는 행렬이 되고, 이를 우리는 분산-공분산행렬(variance-covariance matrix)이라고 합니다. 이 분산-공분산행렬은 무엇이고, 왜 중요한지를 이제부터 살펴보겠습니다.</p>
+</div>
+<div id="표집분포-sampling-distribution" class="section level3">
+<h3><span class="header-section-number">7.1.2</span> 표집분포 (Sampling distribution)</h3>
+<p>지겹게 들어왔던 표집분포로 다시 돌아왔습니다. 그런데 이번에는 조금 다른 방식으로 표집분포를 나타내보겠습니다. 행렬에 대해서 살펴보았으니 표집분포를 행렬의 형태로 나타내 보겠습니다.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="statistical-significance-and-confidence-intervals.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="basics-for-advanced-linear-regression-models-part-i-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/08-Matrix.NPBS.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Kor_AdvancedStats.pdf", "Kor_AdvancedStats.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter5 Recap of Interactions and Hypotheses Tests | Advanced Statistics and Data Analysis: Korean Version</title>
+  <meta name="description" content="Chapter5 Recap of Interactions and Hypotheses Tests | Advanced Statistics and Data Analysis: Korean Version" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter5 Recap of Interactions and Hypotheses Tests | Advanced Statistics and Data Analysis: Korean Version" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter5 Recap of Interactions and Hypotheses Tests | Advanced Statistics and Data Analysis: Korean Version" />
+  
+  
+  
+
+<meta name="author" content="Sanghoon Park" />
+
+
+<meta name="date" content="2020-06-16" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="basics-for-advanced-linear-regression-models-part-ii.html"/>
+<link rel="next" href="basics-for-advanced-linear-regression-models-part-i-1.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
+<li class="chapter" data-level="2" data-path="what-we-are-doing-in-this-course.html"><a href="what-we-are-doing-in-this-course.html"><i class="fa fa-check"></i><b>2</b> What We Are Doing in This Course?</a><ul>
+<li class="chapter" data-level="2.1" data-path="what-we-are-doing-in-this-course.html"><a href="what-we-are-doing-in-this-course.html#우리가-사용하는-자료"><i class="fa fa-check"></i><b>2.1</b> 우리가 사용하는 자료</a></li>
+<li class="chapter" data-level="2.2" data-path="what-we-are-doing-in-this-course.html"><a href="what-we-are-doing-in-this-course.html#추론inference과-변수variables-그리고-측정-수준척도"><i class="fa fa-check"></i><b>2.2</b> 추론(Inference)과 변수(variables), 그리고 측정 수준(척도)</a></li>
+<li class="chapter" data-level="2.3" data-path="what-we-are-doing-in-this-course.html"><a href="what-we-are-doing-in-this-course.html#선형회귀모델-간단히-다시보기"><i class="fa fa-check"></i><b>2.3</b> 선형회귀모델 간단히 다시보기</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="basics-for-advanced-linear-regression-models-part-i.html"><a href="basics-for-advanced-linear-regression-models-part-i.html"><i class="fa fa-check"></i><b>3</b> Basics for Advanced Linear Regression Models: Part I</a><ul>
+<li class="chapter" data-level="3.1" data-path="basics-for-advanced-linear-regression-models-part-i.html"><a href="basics-for-advanced-linear-regression-models-part-i.html#beta_1에-대하여"><i class="fa fa-check"></i><b>3.1</b> <span class="math inline">\(\beta_1\)</span>에 대하여</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="basics-for-advanced-linear-regression-models-part-i.html"><a href="basics-for-advanced-linear-regression-models-part-i.html#eux의-의미"><i class="fa fa-check"></i><b>3.1.1</b> <span class="math inline">\(E(u|x)\)</span>의 의미</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="basics-for-advanced-linear-regression-models-part-i.html"><a href="basics-for-advanced-linear-regression-models-part-i.html#모집단-회귀-함수population-regression-function-prf"><i class="fa fa-check"></i><b>3.2</b> 모집단 회귀 함수(Population Regression Function; PRF)</a></li>
+<li class="chapter" data-level="3.3" data-path="basics-for-advanced-linear-regression-models-part-i.html"><a href="basics-for-advanced-linear-regression-models-part-i.html#추정-조건들들로부터-도출"><i class="fa fa-check"></i><b>3.3</b> 추정-조건들들로부터 도출</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="basics-for-advanced-linear-regression-models-part-i.html"><a href="basics-for-advanced-linear-regression-models-part-i.html#가정1.과-제약1."><i class="fa fa-check"></i><b>3.3.1</b> 가정1.과 제약1.</a></li>
+<li class="chapter" data-level="3.3.2" data-path="basics-for-advanced-linear-regression-models-part-i.html"><a href="basics-for-advanced-linear-regression-models-part-i.html#가정2.와-제약2."><i class="fa fa-check"></i><b>3.3.2</b> 가정2.와 제약2.</a></li>
+<li class="chapter" data-level="3.3.3" data-path="basics-for-advanced-linear-regression-models-part-i.html"><a href="basics-for-advanced-linear-regression-models-part-i.html#언제-beta_1의-값이-커질까"><i class="fa fa-check"></i><b>3.3.3</b> 언제 <span class="math inline">\(\beta_1\)</span>의 값이 커질까?</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="basics-for-advanced-linear-regression-models-part-i.html"><a href="basics-for-advanced-linear-regression-models-part-i.html#추정-잔차의-최소화"><i class="fa fa-check"></i><b>3.4</b> 추정-잔차의 최소화</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="basics-for-advanced-linear-regression-models-part-i.html"><a href="basics-for-advanced-linear-regression-models-part-i.html#표본-회귀-함수-sample-regression-function-srf"><i class="fa fa-check"></i><b>3.4.1</b> 표본 회귀 함수 (Sample regression function, SRF)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="basics-for-advanced-linear-regression-models-part-i.html"><a href="basics-for-advanced-linear-regression-models-part-i.html#모집단-회귀-함수와-표본-회귀-함수의-이해"><i class="fa fa-check"></i><b>3.5</b> 모집단 회귀 함수와 표본 회귀 함수의 이해</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="basics-for-advanced-linear-regression-models-part-i.html"><a href="basics-for-advanced-linear-regression-models-part-i.html#일종의-총합들-sums"><i class="fa fa-check"></i><b>3.5.1</b> 일종의 “총합들” (sums)</a></li>
+<li class="chapter" data-level="3.5.2" data-path="basics-for-advanced-linear-regression-models-part-i.html"><a href="basics-for-advanced-linear-regression-models-part-i.html#r로-계산해보기"><i class="fa fa-check"></i><b>3.5.2</b> <strong>R</strong>로 계산해보기</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="basics-for-advanced-linear-regression-models-part-ii.html"><a href="basics-for-advanced-linear-regression-models-part-ii.html"><i class="fa fa-check"></i><b>4</b> Basics for Advanced Linear Regression Models: Part II</a><ul>
+<li class="chapter" data-level="4.1" data-path="basics-for-advanced-linear-regression-models-part-ii.html"><a href="basics-for-advanced-linear-regression-models-part-ii.html#오차errors"><i class="fa fa-check"></i><b>4.1</b> 오차(Errors)</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="basics-for-advanced-linear-regression-models-part-ii.html"><a href="basics-for-advanced-linear-regression-models-part-ii.html#hatsigma2-추정하기"><i class="fa fa-check"></i><b>4.1.1</b> <span class="math inline">\(\hat{\sigma}^2\)</span> 추정하기</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="basics-for-advanced-linear-regression-models-part-ii.html"><a href="basics-for-advanced-linear-regression-models-part-ii.html#계수coefficients"><i class="fa fa-check"></i><b>4.2</b> 계수(Coefficients)</a></li>
+<li class="chapter" data-level="4.3" data-path="basics-for-advanced-linear-regression-models-part-ii.html"><a href="basics-for-advanced-linear-regression-models-part-ii.html#분산variance"><i class="fa fa-check"></i><b>4.3</b> 분산(Variance)</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="basics-for-advanced-linear-regression-models-part-ii.html"><a href="basics-for-advanced-linear-regression-models-part-ii.html#표집분포sampling-distribution"><i class="fa fa-check"></i><b>4.3.1</b> 표집분포(Sampling distribution)</a></li>
+<li class="chapter" data-level="4.3.2" data-path="basics-for-advanced-linear-regression-models-part-ii.html"><a href="basics-for-advanced-linear-regression-models-part-ii.html#표집분포의-표준오차standard-errors"><i class="fa fa-check"></i><b>4.3.2</b> 표집분포의 표준오차(Standard errors)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="basics-for-advanced-linear-regression-models-part-ii.html"><a href="basics-for-advanced-linear-regression-models-part-ii.html#best-linear-unbiased-estimator"><i class="fa fa-check"></i><b>4.4</b> <strong>B</strong>est <strong>L</strong>inear <strong>U</strong>nbiased <strong>E</strong>stimator</a></li>
+<li class="chapter" data-level="4.5" data-path="basics-for-advanced-linear-regression-models-part-ii.html"><a href="basics-for-advanced-linear-regression-models-part-ii.html#모델의-특정specification"><i class="fa fa-check"></i><b>4.5</b> 모델의 특정(specification)</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="basics-for-advanced-linear-regression-models-part-ii.html"><a href="basics-for-advanced-linear-regression-models-part-ii.html#부적절한irrelevant-변수의-포함"><i class="fa fa-check"></i><b>4.5.1</b> 부적절한(irrelevant) 변수의 포함</a></li>
+<li class="chapter" data-level="4.5.2" data-path="basics-for-advanced-linear-regression-models-part-ii.html"><a href="basics-for-advanced-linear-regression-models-part-ii.html#적절한relevant-변수의-제외"><i class="fa fa-check"></i><b>4.5.2</b> 적절한(relevant) 변수의 제외</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="basics-for-advanced-linear-regression-models-part-ii.html"><a href="basics-for-advanced-linear-regression-models-part-ii.html#다양한-변수들-various-variables"><i class="fa fa-check"></i><b>4.6</b> 다양한 변수들 (Various variables)</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="basics-for-advanced-linear-regression-models-part-ii.html"><a href="basics-for-advanced-linear-regression-models-part-ii.html#질적-변수qualitative-variables"><i class="fa fa-check"></i><b>4.6.1</b> 질적 변수(Qualitative variables)</a></li>
+<li class="chapter" data-level="4.6.2" data-path="basics-for-advanced-linear-regression-models-part-ii.html"><a href="basics-for-advanced-linear-regression-models-part-ii.html#상호작용interactions"><i class="fa fa-check"></i><b>4.6.2</b> 상호작용(Interactions)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="basics-for-advanced-linear-regression-models-part-ii.html"><a href="basics-for-advanced-linear-regression-models-part-ii.html#간단한-정리"><i class="fa fa-check"></i><b>4.7</b> 간단한 정리</a><ul>
+<li class="chapter" data-level="4.7.1" data-path="basics-for-advanced-linear-regression-models-part-ii.html"><a href="basics-for-advanced-linear-regression-models-part-ii.html#개념들의-유기적인-연결"><i class="fa fa-check"></i><b>4.7.1</b> 개념들의 유기적인 연결</a></li>
+<li class="chapter" data-level="4.7.2" data-path="basics-for-advanced-linear-regression-models-part-ii.html"><a href="basics-for-advanced-linear-regression-models-part-ii.html#변수에-대한-심화"><i class="fa fa-check"></i><b>4.7.2</b> 변수에 대한 심화</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="recap-of-interactions-and-hypotheses-tests.html"><a href="recap-of-interactions-and-hypotheses-tests.html"><i class="fa fa-check"></i><b>5</b> Recap of Interactions and Hypotheses Tests</a><ul>
+<li class="chapter" data-level="5.1" data-path="recap-of-interactions-and-hypotheses-tests.html"><a href="recap-of-interactions-and-hypotheses-tests.html#상호작용-interactions"><i class="fa fa-check"></i><b>5.1</b> 상호작용 (Interactions)</a></li>
+<li class="chapter" data-level="5.2" data-path="recap-of-interactions-and-hypotheses-tests.html"><a href="recap-of-interactions-and-hypotheses-tests.html#상호작용의-이해-brambor-et-al.-2006"><i class="fa fa-check"></i><b>5.2</b> 상호작용의 이해: Brambor et al. (2006)</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="recap-of-interactions-and-hypotheses-tests.html"><a href="recap-of-interactions-and-hypotheses-tests.html#왜-조건적-가설을-수립하고-검증하기-위해서는-상호작용-모델을-사용해야만-하는가"><i class="fa fa-check"></i><b>5.2.1</b> 왜 조건적 가설을 수립하고 검증하기 위해서는 상호작용 모델을 사용해야만 하는가?</a></li>
+<li class="chapter" data-level="5.2.2" data-path="recap-of-interactions-and-hypotheses-tests.html"><a href="recap-of-interactions-and-hypotheses-tests.html#왜-상호작용-모델에-모든-구성항을-다-포함해야할까"><i class="fa fa-check"></i><b>5.2.2</b> 왜 상호작용 모델에 모든 구성항을 다 포함해야할까?</a></li>
+<li class="chapter" data-level="5.2.3" data-path="recap-of-interactions-and-hypotheses-tests.html"><a href="recap-of-interactions-and-hypotheses-tests.html#왜-실질적으로-유의미한-한계효과와-표준오차를-보여주어야-하는가"><i class="fa fa-check"></i><b>5.2.3</b> 왜 실질적으로 유의미한 한계효과와 표준오차를 보여주어야 하는가?</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="recap-of-interactions-and-hypotheses-tests.html"><a href="recap-of-interactions-and-hypotheses-tests.html#상호작용항의-이해-경험적-분석"><i class="fa fa-check"></i><b>5.3</b> 상호작용항의 이해: 경험적 분석</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="basics-for-advanced-linear-regression-models-part-i-1.html"><a href="basics-for-advanced-linear-regression-models-part-i-1.html"><i class="fa fa-check"></i><b>6</b> Basics for Advanced Linear Regression Models: Part I</a></li>
+<li class="chapter" data-level="7" data-path="basics-for-advanced-linear-regression-models-part-i-2.html"><a href="basics-for-advanced-linear-regression-models-part-i-2.html"><i class="fa fa-check"></i><b>7</b> Basics for Advanced Linear Regression Models: Part I</a></li>
+<li class="chapter" data-level="8" data-path="basics-for-advanced-linear-regression-models-part-i-3.html"><a href="basics-for-advanced-linear-regression-models-part-i-3.html"><i class="fa fa-check"></i><b>8</b> Basics for Advanced Linear Regression Models: Part I</a></li>
+<li class="chapter" data-level="9" data-path="basics-for-advanced-linear-regression-models-part-i-4.html"><a href="basics-for-advanced-linear-regression-models-part-i-4.html"><i class="fa fa-check"></i><b>9</b> Basics for Advanced Linear Regression Models: Part I</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Advanced Statistics and Data Analysis: Korean Version</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="recap-of-interactions-and-hypotheses-tests" class="section level1">
+<h1><span class="header-section-number">Chapter5</span> Recap of Interactions and Hypotheses Tests</h1>
+<p>바로 전 챕터에서 마지막 부분에 변수들 간의 상호작용(interaction)에 대해서 살펴보았습니다. 이 챕터에서는 우리가 선형회귀모델에서 어떠한 방식으로 이와 같은 변수들 간 서로 연계된, 상호작용하는 관계를 포착하고자 하는지, 그리고 상호작용은 우리가 흔히 이야기하는 ‘가설검정’(hypotheses test)의 맥락에서 어떻게 이해할 수 있는지를 살펴보고자 합니다. 일단 간단히 하나의 다중선형회귀모델을 식으로 나타내 보겠습니다.
+<span class="math display">\[
+y = \alpha +\beta x + \gamma z + \nu
+\]</span>
+위의 식에서 <span class="math inline">\(y\)</span>에 대한 <span class="math inline">\(x\)</span>의 효과는 무엇일까요? 우리는 편미분(partial derivatives)을 이용해서 <span class="math inline">\(\partial y/\partial x\)</span>, <span class="math inline">\(x\)</span>의 한 단위 증가분에 따른 <span class="math inline">\(y\)</span>의 변화로 이를 나타낼 수 있고, 위의 식에서 이는 <span class="math inline">\(\beta\)</span>라고 할 수 있습니다. 여기까지는 이제까지 살펴본 선형회귀모델에서 계수(coefficients)가 의미하는 것과 같습니다.</p>
+<p>그럼 조금 더 깊게 들어가보겠습니다. <span class="math inline">\(x\)</span>의 한 단위 증가분에 따른 <span class="math inline">\(y\)</span>의 변화, 즉 <span class="math inline">\(\partial y/\partial x\)</span>이 고정적이지 않고 변화한다면 어떻게 될까요? 예를 들어,
+<span class="math display">\[
+\partial y/\partial x = \beta + \gamma z
+\]</span>
+라고 표현할 수 있다고 하겠습니다. 이 식이 의미하는 것은 무엇일까요? 여기서의 <span class="math inline">\(\beta\)</span>는 무엇을 의미할까요? 지금 두 부분으로 나누어서 언급한 다중선형회귀모델과 그 선형회귀모델에서 한 변수의 종속변수에 대한 효과가 상수(constants)가 아니라 변수(variables)일 경우가 바로 선형회귀모델에서의 상호작용을 이해하는 핵심이라고 보시면 됩니다.</p>
+<div id="상호작용-interactions" class="section level2">
+<h2><span class="header-section-number">5.1</span> 상호작용 (Interactions)</h2>
+<p>이번에는 좀 더 직관적으로 모델이 상호작용을 전제하고 있다는 것을 보여줄 수 있는 회귀식을 구성해보도록 하겠습니다.</p>
+<p><span class="math display">\[
+y = \alpha +\beta x + \tau xz + \gamma + \nu
+\]</span>
+자, 맨 처음의 식과 달라진 부분이 보이시나요? 위의 식에서 <span class="math inline">\(\beta\)</span>는 무엇을 의미할까요? 과연 우리가 <span class="math inline">\(x\)</span>에 대한 <span class="math inline">\(y\)</span>의 효과를 맨 처음의 식에서와 같이 <span class="math inline">\(\beta\)</span>만을 가지고 충분히 이해할 수 있을까요?</p>
+<p>바로 위의 식에서는 <span class="math inline">\(y\)</span>에 대한 <span class="math inline">\(x\)</span>의 효과를 <span class="math inline">\(\beta\)</span>로만 이해할 수 없습니다. 정확히는 <span class="math inline">\(y\)</span>에 대한 <span class="math inline">\(x\)</span>의 효과는 근본적으로 제3의 변수, <span class="math inline">\(z\)</span>와 얽혀 있습니다. 따라서 이때 우리는 <span class="math inline">\(y\)</span>에 대한 <span class="math inline">\(x\)</span>의 효과를 <span class="math inline">\(\beta\)</span> 그 자체로만 가지고 해석할 수 없습니다. 만약 <span class="math inline">\(z\)</span>가 0일 경우에만 <span class="math inline">\(x\)</span>와 <span class="math inline">\(y\)</span>의 관계에서 <span class="math inline">\(\beta\)</span>가 단독으로 의미를 가지게 됩니다. <span class="math inline">\(z\)</span>가 0이면 위의 식에서 <span class="math inline">\(\tau xz\)</span>라는 항이 아예 사라지게 되니 고려할 필요가 없게 되는 것입니다.</p>
+</div>
+<div id="상호작용의-이해-brambor-et-al.-2006" class="section level2">
+<h2><span class="header-section-number">5.2</span> 상호작용의 이해: Brambor et al. (2006)</h2>
+<p>정치학 분야에서 상호작용에 관한 방법론을 다룰 때, 거의 필수적으로 읽고 넘어가는 논문을 간단하게 한 번 살펴보고자 합니다. Brambor, Golder, 그리고 Clark이 2006년도에 저술한 ‘’Understanding Interaction Models: Improving Empirical Analyses’‘이라는 제목의 논문입니다. 우리말로는’‘상호작용 모델의 이해: 경험적 분석의 개선’’ 정도로 이해할 수 있겠네요.</p>
+<p>이 논문의 요지는 간단합니다. 상호작용항(interaction term)을 다중선형회귀모델에 투입하여 변수들이 종속변수에 대해 상호작용하여 미치는 영향을 살펴보고자 하는 이른바 상호작용 모델의 연구가설은 ‘조건적인 가설’(conditional hypotheses)을 가지게 됩니다. 즉, 서로 상호작용하는 변수들은 각자에 대하여 ‘의존적인’ 관계에 놓이게 된다는 것이죠.</p>
+<p>Brambor et al. (2006)은 이와 같은 상호작용항의 존재는 사실 다중선형회귀모델을 구성하는 Gaus-Markov 가정 중 변수들 간의 독립성에 해당하는 부분을 침해하는 것이기 때문에 이에 대한 조심스러운 접근이 필요함에도 불구하고 상호작용 모델을 사용하는 연구들이 고민없이 두 변수를 단순히 곱한 채 모델에 투입하는 등의 행태를 보이고 있다고 지적합니다.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p>Brambor et al. (2006)은 곱셈을 통해 만들어낸 상호작용항을 이용한 경험적 분석을 개선할 수 있는 몇 가지 방법들을 제안합니다. 이들은 정치학 분야에서 조건적 가설을 사용한 몇몇 연구들이 상호작용 모델을 구성하는 데 있어서 오류를 범해 그 연구결과로부터 도출된 추론이 잘못되었다는 사실을 지적합니다. 과학적 연구란 항상 ‘정답을 보여주는’ 연구가 아니라 어디까지나 ‘반증가능한’ 연구를 의미한다는 것을 생각해볼 때, 그리 놀라운 일은 아닙니다. 오히려 굉장히 정치학 분야에서 과학적 연구의 순기능이 작동한 사례라고 볼 수도 있을 것 같습니다.</p>
+<p>Brambor et al. (2006)의 핵심적인 주장—즉, 상호작용 모델을 이용한 경험적 연구의 개선방안은 크게 네 가지 정도로 정리해볼 수 있습니다.</p>
+<ul>
+<li><p>첫째, 조건적 가설을 수립하고 그것을 경험적으로 분석하는 데에는 상호작용 모델이 요구된다.</p></li>
+<li><p>둘째, 상호작용 모델을 사용할 때, 반드시 구성요소가 되는 변수들의 항(constitutive terms, 이하 구성항)을 모델에 모두 투입해야 한다. 예를 들어, <span class="math inline">\(x\)</span>, <span class="math inline">\(xz\)</span>, <span class="math inline">\(z\)</span> 라는 세 예측변수들로 <span class="math inline">\(y\)</span>를 설명하고자 할 때, 우리의 관심사가 상호작용의 관계, 즉 <span class="math inline">\(xz\)</span>의 효과라고 하더라도 그 상호작용항을 이루는 <span class="math inline">\(x\)</span>와 <span class="math inline">\(z\)</span>의 각 변수 또한 모델에 투입해주어야 한다는 얘기입니다.</p></li>
+<li><p>셋째, 구성항들은 기존의 다중선형회귀모델의 가산적 관계(additive relationship)에서 예측변수들을 다루듯 해석하기가 어렵다는 것입니다. 여기서 가산적 관계란 ‘+’, OR로 이루어진 관계로 각 변수들 간의 관계는 독립적이라는 가정이 성립된다는 것을 의미합니다. 그러나 위에서 잠깐 살펴보았던 것처럼 상호작용항의 경우에는 <span class="math inline">\(x\)</span>의 <span class="math inline">\(y\)</span>에 대한 효과가 <span class="math inline">\(z\)</span>에 조건적이고, 반대로 <span class="math inline">\(z\)</span>의 <span class="math inline">\(y\)</span>에 대한 효과도 <span class="math inline">\(x\)</span>에서 자유롭지 못하죠. 따라서 각 변수들이 서로 독립적일 것이라는 기대가 가능했던 기존의 다중선형회귀모델과는 달리 상호작용 모델에서 구성항들의 의미는 직관적으로 해석하기가 까다롭습니다.</p></li>
+<li><p>마지막으로 넷째, 연구자들은 반드시 실질적으로 유의미한 한계효과(marginal effects)와 표준오차를 계산해야 한다고 제안합니다(Brambor et al. 2005, 64).</p></li>
+</ul>
+<p>논문의 저자들은 그들의 주장을 이해하기 쉽게 <span class="math inline">\(Y = b_0 + b_1X + b_2Z + b_3XZ + \epsilon\)</span>이라는 모델을 통해 풀어 나갑니다.</p>
+<div id="왜-조건적-가설을-수립하고-검증하기-위해서는-상호작용-모델을-사용해야만-하는가" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> 왜 조건적 가설을 수립하고 검증하기 위해서는 상호작용 모델을 사용해야만 하는가?</h3>
+<p>이론적으로 가산적 관계를 상정한 선형 모델은 각각의 예측변수들이 서로 독립적으로 종속변수와 관계를 맺고 있을 것이라고 봅니다. 이는 선형 모델의 경우 각 예측변수에 대해 조건적 가설이 아닌 독립적 가설을 수립하고 있다고 이해할 수 있습니다. 논문에 보시면 흔히, “다른 조건들이 모두 일정할 때, <span class="math inline">\(x\)</span>의 <span class="math inline">\(y\)</span>에 대한 효과는 어떠할 것이다” 라는 형태의 진술을 가설로 사용하는 것이 그러합니다. 다른 조건들이 모두 일정하다는 얘기는 다중선형회귀모델에서 우리가 관심을 가지고 있는 <span class="math inline">\(x\)</span> 이외의 다른 모든 변수들을 상수로 고정하였을 때, <span class="math inline">\(x\)</span>가 <span class="math inline">\(y\)</span>에 미치는 부분적 효과(partial effect)만을 보겠다는 것이고, 이것이 이 챕터 맨 처음에 제시하였던 식에서의 <span class="math inline">\(\beta\)</span>라고 이해할 수 있습니다.</p>
+<p>그러나 여기서는 정치학이라고도 할 수 있겠습니다만 사회과학 제분야의 경우 어떠한 맥락 혹은 조건의 효과를 고려하는 것이 모델링에 주요한 영향을 미치기 때문에 상호작용항을 포함한 모델을 생각해보아야 하는 경우가 생길 때가 많습니다. 예를 들어, 한국의 선거정치 속에 나타나는 계급투표에 대해 관심이 있다고 해보겠습니다. 이때, 기존 연구들의 주요 가설은 소득 수준에 따라 돈 많은 사람은 세금 많이 떼기 싫고 기득권 층일테니 보수정당을 지지할 것이라고 기대하고, 반대로 돈 없는 사람은 복지지출 등을 제고하기를 기대하며 진보정당에 투표할 가능성이 클 것이라고 해보겠습니다. 이때, 나의 연구가설은 이러한 계급적 투표가 실제 선거에서 정당 선택으로 이어지는 관계가 개별 유권자들의 정치적 세련도, 혹은 정치지식 수준에 따라 달라진다는 조건적 가설일 수 있습니다. 왜냐하면 돈이 없더라도 정치지식 수준이 높은 사람들의 경우 특정 정책에 대한 이해도가 더 높아 정당 선호가 달라질 수 있으니까요. 다양한 논의가 가능하겠지만 일단 이런 맥락에서 사회과학 분야에서 상호작용 모델은 상당히 빈번하게 논의됩니다.</p>
+<p>마찬가지로 Brambor al. (2006)도 조건적 가설의 사례를 하나 제시하는데, 그들이 제시하는 가설은 조금 더 통계적이라고 해야할까요, 도식적입니다. 실제 연구문제를 바탕으로 한 가설은 아닙니다. 일단 조건적 가설이라고 보기 어려운 경우를 한 번 보겠습니다.</p>
+<p>그들은 “<span class="math inline">\(Z\)</span>라는 조건이 존재할 때, <span class="math inline">\(X\)</span>의 한 단위 증가가 <span class="math inline">\(Y\)</span>와 관계를 가지고, <span class="math inline">\(Z\)</span>라는 조건이 부재할 경우에는 <span class="math inline">\(X\)</span>와 <span class="math inline">\(Y\)</span> 간의 관계 또한 성립되지 않을 것이다”라는 가설을 제시합니다. 즉, 여기서 <span class="math inline">\(Z\)</span>라는 변수는 특정 조건의 존재 여부를 보여주므로 이항변수(binary variable)이라고 할 수 있겠죠? 만약 우리가 이항변수 <span class="math inline">\(Z\)</span>를 성별이라고 한다면, 이 성별 변수의 계수값은 <span class="math inline">\(Y\)</span>에 있어서 남성과 여성일 경우 각기 다른 절편값으로 해석할 수 있을 겁니다. 남성이 1, 여성이 0이라고 한다면</p>
+<p><span class="math display">\[
+\begin{equation*}
+\begin{split}
+여성: Y&amp;=&amp;b_0 + b_1X + b_2(Z=0) + \epsilon = b_0 + b_1X + \epsilon \\
+남성: Y&amp;=&amp;b_0 + b_1X + b_2(Z=1) + \epsilon = b_0 + b_1X + b_2 + \epsilon
+\end{split}
+\end{equation*}
+\]</span>
+이때 이 두 식의 차이는 <span class="math inline">\(b_2\)</span>, 상수로 나타납니다. 따라서 이 경우에는 조건적 가설이라고 부르기가 어렵습니다.</p>
+</div>
+<div id="왜-상호작용-모델에-모든-구성항을-다-포함해야할까" class="section level3">
+<h3><span class="header-section-number">5.2.2</span> 왜 상호작용 모델에 모든 구성항을 다 포함해야할까?</h3>
+<p>그렇다면 왜 상호작용 모델에 모든 구성항을 다 포함해야만 할까요? 그리고 상호작용 모델에서의 구성항과 일반 가산적 관계의 선형 모델에서의 예측변수 간의 차이는 무엇일까요?</p>
+<p>상호작용 모델(<span class="math inline">\(Y = b_0 + b_1X + b_2Z + b_3XZ + \epsilon\)</span>)에서 구성항을 제외한다면, 우리는 <span class="math inline">\(Y = b_0 + b_1XZ + \epsilon\)</span>라는 모델을 생각해볼 수 있습니다. 구성항을 제외해도 말이 된다라는 얘기는 위의 <span class="math inline">\(Y = b_0 + b_1X + b_2Z + b_3XZ + \epsilon\)</span>이 <span class="math inline">\(Y = b_0 + b_1XZ + \epsilon\)</span>의 모델과 다르지 않다라는 주장을 해야한다는 것을 의미합니다. 이때, 만약 구성항을 제외한 모델이 타당하다면,</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(Z\)</span>가 평균적으로 <span class="math inline">\(Y\)</span>에 미치는 효과가 존재하지 않다거나</li>
+<li><span class="math inline">\(X\)</span>가 0일 때, <span class="math inline">\(Z\)</span>가 <span class="math inline">\(Y\)</span>에 미치는 효과가 없다</li>
+</ol>
+<p>라고 주장할 수 있어야만 합니다. 다시 말하면, 첫째로 <span class="math inline">\(Z\)</span>가 평균적으로 <span class="math inline">\(Y\)</span>에 미치는 효과가 없다는 얘기는 사실상 비체계적 요인으로서 <span class="math inline">\(Y\)</span>에 평균적으로 체계적 변화를 가져오는 요인이 <span class="math inline">\(X\)</span> 뿐이라고 주장하던가(이 경우 본질적으로 해당 모형의 함의는 <span class="math inline">\(Y = b_0 + b_1X + \epsilon\)</span>과 다를 바 없게 됨), 혹은 <span class="math inline">\(X\)</span>가 0일 때, <span class="math inline">\(b_1XZ\)</span> 항이 제거되면서 절편값인 <span class="math inline">\(b_0 + \epsilon\)</span>만 남게 되어 두 번째 주장이 타당하다고 말할 수 있어야 합니다. 그러나 위의 두 주장은 가설로서 거의 정당화되기 어렵습니다(Brambor et al. 2006, 66). 왜냐하면 <span class="math inline">\(Y = b_0 + b_1X + b_2Z + b_3XZ + \epsilon\)</span>에서 <span class="math inline">\(b_2\)</span>는 상호작용 모델에서 <span class="math inline">\(X\)</span>가 0일때의 <span class="math inline">\(Z\)</span>가 <span class="math inline">\(Y\)</span>에 미치는 효과를 보여주기 때문에, 이는 <span class="math inline">\(Z\)</span>가 평균적으로 <span class="math inline">\(Y\)</span>에 미치는 효과가 존재않다는 것을 보여주어야 하는 것과 배치됩니다. 마찬가지로 <span class="math inline">\(Z\)</span>의 <span class="math inline">\(Y\)</span>에 대한 평균적인 효과가 0이라고 하더라도 <span class="math inline">\(b_2\)</span>가 반드시 0이라는 보장도 없습니다. <span class="math inline">\(X\)</span>가 0일 때, <span class="math inline">\(Z\)</span>가 <span class="math inline">\(Y\)</span>에 대해 가지는 효과가 전혀 없다(<span class="math inline">\(b_2 = 0\)</span>)고 미리 전제하는 것보다는, <span class="math inline">\(b_2\)</span>가 0이 아닐 수도 있을 가능성을 먼저 생각해보는 것이 더 많은 경우의 수를 제공합니다(Brambor et al. 2005, 66). 다시 말해, 선험적으로 구성항을 제외하는 분석은 <span class="math inline">\(b_2\)</span>가 0이 아니라면 우리가 관심을 가지고 있는 모수의 추정치를 왜곡하여 잘못된 추론을 도출하게 할 수 있습니다(Brambor et al. 2006, 68).</p>
+<p>위에서 언급한 바와 같이, <span class="math inline">\(X\)</span>에 대한 계수, <span class="math inline">\(b_1\)</span>와 <span class="math inline">\(Z\)</span>에 대한 계수 <span class="math inline">\(b_2\)</span>는 일반적인 가산적 관계의 모델(<span class="math inline">\(Y =b_0 + b_1X + b_2Z + \epsilon\)</span>)의 <span class="math inline">\(X\)</span>와 <span class="math inline">\(Z\)</span>의 계수들과는 다릅니다. 가산 모델에서 <span class="math inline">\(b_2\)</span>는 <span class="math inline">\(Z\)</span>의 <span class="math inline">\(Y\)</span>에 대한 평균적인 효과를 보여줍니다. 그러나 상호작용 모델에서 <span class="math inline">\(b_2\)</span>는 <span class="math inline">\(X\)</span>에 따라 조건적으로 변화하는 <span class="math inline">\(Z\)</span>의 <span class="math inline">\(Y\)</span>에 대한 효과를 보여줍니다.</p>
+</div>
+<div id="왜-실질적으로-유의미한-한계효과와-표준오차를-보여주어야-하는가" class="section level3">
+<h3><span class="header-section-number">5.2.3</span> 왜 실질적으로 유의미한 한계효과와 표준오차를 보여주어야 하는가?</h3>
+<p>상호작용 모델에 있어서 각 예측변수들이 종속변수에 미치는 효과를 제대로 보여주기 위해서 Brambor et al. (2006)은 실질적으로 유의미한 한계효과와 표준오차를 함께 제시해야 한다고 주장하고 있습니다. 그 이유는 상호작용항의 효과가 일정하지 않기 때문(not constant)입니다. 상호작용 모델(<span class="math inline">\(Y = b_0 + b_1X + b_2Z + b_3XZ + \epsilon\)</span>)에서 <span class="math inline">\(X\)</span>의 한 단위 증가와 관계된 <span class="math inline">\(Y\)</span>의 변화분을 살펴보기 위해 편미분을 할 경우, 우리는 아래와 같은 식을 얻게 됩니다.
+<span class="math display">\[
+\frac{\partial Y}{\partial X} = b_1+ b_3 Z
+\]</span>
+위의 식은 상호작용 모델에서 <span class="math inline">\(X\)</span>의 <span class="math inline">\(Y\)</span>에 대한 효과가 <span class="math inline">\(Z\)</span> 변수의 값에 따라서 조건적으로 변화한다는 것을 의미합니다 (Brambor et al. 2006, 73). 따라서 상호작용항의 계수는 직접적으로 해석될 수는 없습니다. 그 값이 <span class="math inline">\(Z\)</span>에 따라 변화하니까요. 우리는 계수의 부호나 통계적 유의성에 대해서는 이야기할 수 있지만 실질적으로 그 효과의 크기 등에 대해서는 계수만 보고는 대답할 수 없게 됩니다.</p>
+<p>때문에 <span class="math inline">\(Z\)</span>에 의해 조건적으로 변화하는 <span class="math inline">\(Y\)</span>에 대한 <span class="math inline">\(X\)</span>의 효과를 살펴보기 위해서는 <span class="math inline">\(X\)</span>의 <span class="math inline">\(Y\)</span>에 대한 한계효과를 계산할 필요가 있습니다. 한계효과는 <span class="math inline">\(Z\)</span>의 조건 하에서 <span class="math inline">\(X\)</span>의 한 단위 변화가 평균적으로 얼마만큼의 <span class="math inline">\(Y\)</span>의 변화와 관계되는지를 보여줍니다. 또한 한계효과의 표준오차는 그렇게 계산된 한계효과가 얼마나 확실한지를 보여줍니다. 한계효과의 표준오차가 가지는 함의는 일반적으로 선형회귀모델의 계수값과 표준오차 간의 관계와 비슷하다고 이해하셔도 무방합니다. 그 한계효과가 통계적으로 유의미한 효과인지를 보여주는 것이니까요.</p>
+<p>정리하자면 Brambor et al. (2006)의 함의는 다음과 같습니다.</p>
+<ul>
+<li><p>상호작용 모델이라고 하더라도 상호작용항뿐만 아니라 모든 구성항을 포함시켜 분석해야 한다.</p></li>
+<li><p>“<span class="math inline">\(Z\)</span>를 상수로 고정한다(=통제한다)”는 것은 <span class="math inline">\(Z\)</span>가 0이라는 것과 같은 의미가 아니다.</p></li>
+<li><p>모델 내에 존재하는 두 구성항의 곱으로 상호작용항을 만들었기 때문에 다중공선성(multicollinearity)가 발생할 수 있다.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p></li>
+<li><p>상호작용항의 계수는 <span class="math inline">\(\frac{\partial Y}{\partial X} = b_1+ b_3 Z\)</span>로 나타낼 수 있고, 이때 상호작용의 계수가 편미분을 하더라도 <span class="math inline">\(Z\)</span>라는 새로운 변수에 의해 조건적으로 변화할 수 있다는 것을 알 수 있다. 따라서 상호작용항의 계수를 직접적으로 일반선형회귀모델의 계수처럼 해석하기는 어렵다.</p></li>
+</ul>
+<p>그렇다면 한 번 실제 데이터를 통해 분석해보도록 하겠습니다.</p>
+</div>
+</div>
+<div id="상호작용항의-이해-경험적-분석" class="section level2">
+<h2><span class="header-section-number">5.3</span> 상호작용항의 이해: 경험적 분석</h2>
+<p>4개의 연속형 변수(<span class="math inline">\(x\)</span>, <span class="math inline">\(z\)</span>, <span class="math inline">\(y\)</span>, <span class="math inline">\(w\)</span>)를 가지고 다음과 같은 형태의 모델을 추정하고자 한다고 합시다: <span class="math inline">\(y = \gamma + \eta x + \alpha z + \mu xz + \beta w\)</span>. <span class="math inline">\(x\)</span>와 <span class="math inline">\(z\)</span>의 상호작용항이 포함되었으니 위의 식에서 <span class="math inline">\(x\)</span>와 <span class="math inline">\(z\)</span>의 효과를 단순히 <span class="math inline">\(\eta\)</span>와 <span class="math inline">\(\alpha\)</span>를 가지고 해석할 수는 없을 것입니다. 따라서 여기서는 <span class="math inline">\(x\)</span>와 <span class="math inline">\(z\)</span>의 변화에 따라서 각각 <span class="math inline">\(z\)</span>와 <span class="math inline">\(x\)</span>가 <span class="math inline">\(y\)</span>에 대해 미치는 효과가 어떻게 조건적으로 변화하는지를 살펴보고자 합니다.</p>
+<ul>
+<li><p>분석을 위해서 변수 <span class="math inline">\(x\)</span>와 <span class="math inline">\(z\)</span>가 높은 수준의 값을 지니는 경우를 <span class="math inline">\(\bar{x}\)</span>와 <span class="math inline">\(\bar{z}\)</span>라고 하겠습니다.</p></li>
+<li><p>반대로 <span class="math inline">\(x\)</span>와 <span class="math inline">\(z\)</span>가 낮은 수준의 값을 지닐 때를 <span class="math inline">\(\underline{x}\)</span>, <span class="math inline">\(\underline{z}\)</span>라고 표현하도록 하겠습니다.</p></li>
+</ul>
+<p>그리고 위와 같은 분석적 프레임 하에서 다음과 같은 경우를 실제 모델과 데이터를 통해 살펴보도록 하겠습니다.
+<span class="math display">\[
+\begin{equation*}
+\begin{split}
+E(y|x = \underline{x}, z = \underline{z}) - E(y|x = \bar{x}, z = \underline{z})\\
+E(y|x = \underline{x}, z = \bar{z}) - E(y|x = \bar{x}, z = \bar{z})
+\end{split}
+\end{equation*}
+\]</span>
+<span class="math inline">\(x\)</span>와 <span class="math inline">\(z\)</span>에 관한 위의 두 표현이 과연 모델과 데이터와 관련해서 우리에게 어떤 실질적 함의를 제공해줄까요?</p>
+<p>먼저 <code>QOG</code> 데이터셋에서 2014년도의 국가코드, 국가명, 연도, 해외직접투자 유입, 노령인구 비율, 무역 개방성, 1인당 GDP에 해당하는 변수들을 따로 선별하여 서브셋을 만들고, 결측치를 제외하였습니다. 그리고 1인당 GDP를 해외직접투자 유입, 무역 개방성, 그리고 해외직접투자 유입과 무역 개방성의 상호작용항과 노령인구 비율로 설명할 수 있다는 모델을 만들었습니다.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="recap-of-interactions-and-hypotheses-tests.html#cb1-1"></a><span class="kw">library</span>(ezpickr)</span>
+<span id="cb1-2"><a href="recap-of-interactions-and-hypotheses-tests.html#cb1-2"></a><span class="kw">library</span>(broom)</span>
+<span id="cb1-3"><a href="recap-of-interactions-and-hypotheses-tests.html#cb1-3"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
+<pre><code>## -- Attaching packages --------------------------------------- tidyverse 1.3.0 --</code></pre>
+<pre><code>## v ggplot2 3.3.1     v purrr   0.3.4
+## v tibble  3.0.1     v dplyr   1.0.0
+## v tidyr   1.1.0     v stringr 1.4.0
+## v readr   1.3.1     v forcats 0.5.0</code></pre>
+<pre><code>## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="recap-of-interactions-and-hypotheses-tests.html#cb5-1"></a>QOG &lt;-<span class="st"> </span><span class="kw">pick</span>(<span class="dt">file =</span> <span class="st">&quot;http://www.qogdata.pol.gu.se/data/qog_bas_ts_jan20.dta&quot;</span>)</span>
+<span id="cb5-2"><a href="recap-of-interactions-and-hypotheses-tests.html#cb5-2"></a>QOG.s &lt;-QOG <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb5-3"><a href="recap-of-interactions-and-hypotheses-tests.html#cb5-3"></a><span class="st">  </span><span class="kw">select</span>(ccode, cname, year, </span>
+<span id="cb5-4"><a href="recap-of-interactions-and-hypotheses-tests.html#cb5-4"></a>         wdi_fdiin, wdi_pop1564, wdi_trade, wdi_gdpcapcon2010) <span class="op">%&gt;%</span></span>
+<span id="cb5-5"><a href="recap-of-interactions-and-hypotheses-tests.html#cb5-5"></a><span class="st">         </span><span class="co"># 이 네 변수들은 모두 연속형 변수들입니다.</span></span>
+<span id="cb5-6"><a href="recap-of-interactions-and-hypotheses-tests.html#cb5-6"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">filter</span>(year<span class="op">==</span><span class="dv">2014</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">drop_na</span>()</span>
+<span id="cb5-7"><a href="recap-of-interactions-and-hypotheses-tests.html#cb5-7"></a></span>
+<span id="cb5-8"><a href="recap-of-interactions-and-hypotheses-tests.html#cb5-8"></a>model.ch5 &lt;-<span class="st"> </span><span class="kw">lm</span>(wdi_gdpcapcon2010 <span class="op">~</span><span class="st"> </span>wdi_trade <span class="op">+</span><span class="st"> </span>wdi_fdiin <span class="op">+</span></span>
+<span id="cb5-9"><a href="recap-of-interactions-and-hypotheses-tests.html#cb5-9"></a><span class="st">                  </span>wdi_trade<span class="op">*</span>wdi_fdiin <span class="op">+</span><span class="st"> </span>wdi_pop1564, <span class="dt">data=</span>QOG.s)</span></code></pre></div>
+<p>원래는 모델에서 얻은 추정치(estimates)를 별도의 객체(objects)로 저장하여 작업하는 것을 선호하지는 않습니다. 하지만 여기서는 직관적으로 위에 써 놓은 두 모델과 연관지어 이해하기 위해서 각 변수와 계수를 별도의 객체로 저장한 뒤에 위의 두 식과 동일한 <strong>R</strong> 코드를 이용해 분석해보도록 하겠습니다.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="recap-of-interactions-and-hypotheses-tests.html#cb6-1"></a><span class="co"># 먼저 모델에서 얻은 각 계수값을 위의 식에 상응하는 객체로 저장하여 줍니다.</span></span>
+<span id="cb6-2"><a href="recap-of-interactions-and-hypotheses-tests.html#cb6-2"></a>b0 &lt;-<span class="st"> </span>model.ch5<span class="op">$</span>coefficients[<span class="dv">1</span>]</span>
+<span id="cb6-3"><a href="recap-of-interactions-and-hypotheses-tests.html#cb6-3"></a>b1 &lt;-<span class="st"> </span>model.ch5<span class="op">$</span>coefficients[<span class="dv">2</span>]</span>
+<span id="cb6-4"><a href="recap-of-interactions-and-hypotheses-tests.html#cb6-4"></a>b2 &lt;-<span class="st"> </span>model.ch5<span class="op">$</span>coefficients[<span class="dv">3</span>]</span>
+<span id="cb6-5"><a href="recap-of-interactions-and-hypotheses-tests.html#cb6-5"></a>b3 &lt;-<span class="st"> </span>model.ch5<span class="op">$</span>coefficients[<span class="dv">4</span>]</span>
+<span id="cb6-6"><a href="recap-of-interactions-and-hypotheses-tests.html#cb6-6"></a>b4 &lt;-<span class="st"> </span>model.ch5<span class="op">$</span>coefficients[<span class="dv">5</span>]</span>
+<span id="cb6-7"><a href="recap-of-interactions-and-hypotheses-tests.html#cb6-7"></a></span>
+<span id="cb6-8"><a href="recap-of-interactions-and-hypotheses-tests.html#cb6-8"></a><span class="co"># 그리고 각 변수들도 별도의 객체로 저장해보도록 하겠습니다.</span></span>
+<span id="cb6-9"><a href="recap-of-interactions-and-hypotheses-tests.html#cb6-9"></a>y &lt;-<span class="st"> </span>QOG.s<span class="op">$</span>wdi_gdpcapcon2010; x &lt;-<span class="st"> </span>QOG.s<span class="op">$</span>wdi_trade; </span>
+<span id="cb6-10"><a href="recap-of-interactions-and-hypotheses-tests.html#cb6-10"></a>z &lt;-<span class="st"> </span>QOG.s<span class="op">$</span>wdi_fdiin; w &lt;-<span class="st"> </span>QOG.s<span class="op">$</span>wdi_pop1564</span>
+<span id="cb6-11"><a href="recap-of-interactions-and-hypotheses-tests.html#cb6-11"></a></span>
+<span id="cb6-12"><a href="recap-of-interactions-and-hypotheses-tests.html#cb6-12"></a><span class="co"># 이제 첫 번째 수식에 대응하는 계산을 수행합니다.</span></span>
+<span id="cb6-13"><a href="recap-of-interactions-and-hypotheses-tests.html#cb6-13"></a>y1 &lt;-<span class="st"> </span>b0 <span class="op">+</span><span class="st"> </span>(b1 <span class="op">*</span><span class="st"> </span><span class="kw">min</span>(x)) <span class="op">+</span><span class="st"> </span>(b2 <span class="op">*</span><span class="st"> </span><span class="kw">min</span>(z)) <span class="op">+</span></span>
+<span id="cb6-14"><a href="recap-of-interactions-and-hypotheses-tests.html#cb6-14"></a><span class="st">  </span>(b3 <span class="op">*</span><span class="st"> </span><span class="kw">min</span>(x) <span class="op">*</span><span class="st"> </span><span class="kw">min</span>(z)) <span class="op">+</span><span class="st"> </span>(b4 <span class="op">*</span><span class="st"> </span>w)</span>
+<span id="cb6-15"><a href="recap-of-interactions-and-hypotheses-tests.html#cb6-15"></a>y2 &lt;-<span class="st"> </span>b0 <span class="op">+</span><span class="st"> </span>(b1 <span class="op">*</span><span class="st"> </span><span class="kw">max</span>(x)) <span class="op">+</span><span class="st"> </span>(b2 <span class="op">*</span><span class="st"> </span><span class="kw">min</span>(z)) <span class="op">+</span></span>
+<span id="cb6-16"><a href="recap-of-interactions-and-hypotheses-tests.html#cb6-16"></a><span class="st">  </span>(b3 <span class="op">*</span><span class="st"> </span><span class="kw">max</span>(x) <span class="op">*</span><span class="st"> </span><span class="kw">min</span>(z)) <span class="op">+</span><span class="st"> </span>(b4 <span class="op">*</span><span class="st"> </span>w)</span>
+<span id="cb6-17"><a href="recap-of-interactions-and-hypotheses-tests.html#cb6-17"></a>A1 &lt;-<span class="st"> </span>y1 <span class="op">-</span><span class="st"> </span>y2</span>
+<span id="cb6-18"><a href="recap-of-interactions-and-hypotheses-tests.html#cb6-18"></a><span class="kw">unique</span>(A1)</span></code></pre></div>
+<pre><code>## [1] 1756329 1756329</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="recap-of-interactions-and-hypotheses-tests.html#cb8-1"></a><span class="co"># 두 번째 수식에 대응하는 계산을 수행합니다.</span></span>
+<span id="cb8-2"><a href="recap-of-interactions-and-hypotheses-tests.html#cb8-2"></a>y3 &lt;-<span class="st"> </span>b0 <span class="op">+</span><span class="st"> </span>(b1 <span class="op">*</span><span class="st"> </span><span class="kw">min</span>(x)) <span class="op">+</span><span class="st"> </span>(b2 <span class="op">*</span><span class="st"> </span><span class="kw">max</span>(z)) <span class="op">+</span></span>
+<span id="cb8-3"><a href="recap-of-interactions-and-hypotheses-tests.html#cb8-3"></a><span class="st">  </span>(b3 <span class="op">*</span><span class="st"> </span><span class="kw">min</span>(x) <span class="op">*</span><span class="st"> </span><span class="kw">max</span>(z)) <span class="op">+</span><span class="st"> </span>(b4 <span class="op">*</span><span class="st"> </span>w)</span>
+<span id="cb8-4"><a href="recap-of-interactions-and-hypotheses-tests.html#cb8-4"></a>y4 &lt;-<span class="st"> </span>b0 <span class="op">+</span><span class="st"> </span>(b1 <span class="op">*</span><span class="st"> </span><span class="kw">max</span>(x)) <span class="op">+</span><span class="st"> </span>(b2 <span class="op">*</span><span class="st"> </span><span class="kw">max</span>(z)) <span class="op">+</span></span>
+<span id="cb8-5"><a href="recap-of-interactions-and-hypotheses-tests.html#cb8-5"></a><span class="st">  </span>(b3 <span class="op">*</span><span class="st"> </span><span class="kw">max</span>(x) <span class="op">*</span><span class="st"> </span><span class="kw">max</span>(z)) <span class="op">+</span><span class="st"> </span>(b4 <span class="op">*</span><span class="st"> </span>w)</span>
+<span id="cb8-6"><a href="recap-of-interactions-and-hypotheses-tests.html#cb8-6"></a>A2 &lt;-<span class="st"> </span>y3 <span class="op">-</span><span class="st"> </span>y4</span>
+<span id="cb8-7"><a href="recap-of-interactions-and-hypotheses-tests.html#cb8-7"></a><span class="kw">unique</span>(A2)</span></code></pre></div>
+<pre><code>## [1] -12068740 -12068740</code></pre>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>상호작용항을 곱셈으로 표현하는 것은 논리적 근거를 가지고 있습니다. 예를 들어, 부울리안(Boolean)은 ‘+’를 OR,’<span class="math inline">\(\times\)</span>’를 AND로 표현하는데, 곱셈이란 두 조건이 동시에 존재하는 것을 의미합니다. 상호작용항 역시도 두 변수의 효과가 함께 종속변수에 영향을 미친다는 것을 보여주고자 하므로 곱셈의 형태로 나타냅니다.<a href="recap-of-interactions-and-hypotheses-tests.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>다중공선성이라는 것이 변수들 간의 공변 양상(covariances)에 따라 나타나는 것이니만큼, 두 변수의 곱을 통해 만들어낸 상호작용항이 모델 전반의 다중공선성을 높일 것이라 예상하는 것은 어렵지 않습니다. 다만, 과연 다중공선성이 반드시 나쁘냐하는 것에 대해서는 고민해볼 필요가 있습니다. 앞선 챕터 4에서 이에 관한 문제를 다룬 부분이 있으니 참고해보시기 바랍니다.<a href="recap-of-interactions-and-hypotheses-tests.html#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="basics-for-advanced-linear-regression-models-part-ii.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="basics-for-advanced-linear-regression-models-part-i-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/05-Reinteraction.Hypotheses.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Kor_AdvancedStats.pdf", "Kor_AdvancedStats.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

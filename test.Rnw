@@ -1,0 +1,10 @@
+\documentclass{article}
+
+\begin{document}
+
+\begin{equation}
+\frac{\partial \hat{\epsilon}'\hat{\epsilon}}{\partial\hat{\beta}} = \frac{\partial(y-X\hat{\beta})'(y-X\hat{\beta})}{\partial \hat{\beta}} = 2X'X\hat{\beta}-2X'y = 0
+\end{equation}
+
+
+\end{document}
